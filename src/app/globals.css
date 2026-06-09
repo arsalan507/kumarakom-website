@@ -1,26 +1,470 @@
 @import "tailwindcss";
 
+/* ───────────────────────────────────────────────────────────────
+   Kumarakom — Vembanad Ivory palette
+   Warm ivory cream + ink near-black + oxidised brass + single teal accent.
+   Reference register: Aman.com · COMO · Oberoi · Sotheby's International Realty.
+   ─────────────────────────────────────────────────────────────── */
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* Warm dark foundations */
+  --ink:         #1A1614;        /* primary dark background */
+  --char:        #2A2520;        /* secondary dark / card on dark */
+  --graphite:    #3D352E;        /* warm body type on light bg */
+  --graphite-light: #6F6256;     /* muted text on light bg */
+  --taupe:       #A89580;        /* muted text on dark / sage replacement */
+
+  /* Warm light foundations */
+  --ivory:       #F2EBDE;        /* primary light background */
+  --silk:        #E4D9C3;        /* secondary light — slightly deeper */
+  --ivory-pure:  #FAF7F2;        /* highest contrast — type on dark */
+
+  /* Warm metallics */
+  --brass:       #8A6A3B;        /* primary accent — oxidised brass */
+  --brass-light: #B8895A;        /* secondary accent — warmer brass */
+  --brass-glow:  #D4A876;        /* highlight tint on hover */
+
+  /* Single jewel — Vembanad backwater teal */
+  --teal:        #2C4F4A;
+
+  /* Tone-relative bindings (default = ink) — overridden by .tone-* */
+  --bg:          var(--ink);
+  --bg-card:     rgba(58, 50, 44, 0.32);
+  --bg-card-deep:rgba(20, 16, 14, 0.55);
+  --on-bg:       var(--ivory);
+  --on-bg-muted: rgba(242, 235, 222, 0.78);
+  --on-bg-soft:  rgba(242, 235, 222, 0.55);
+  --rule:        rgba(242, 235, 222, 0.14);
+  --rule-strong: rgba(242, 235, 222, 0.26);
+  --accent:      var(--brass-light);
+  --accent-deep: var(--brass);
+
+  --font-display: var(--font-cormorant), Georgia, "Times New Roman", serif;
+  --font-sans:    var(--font-inter), -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
 }
 
+/* Light section tone — ivory cream */
+.tone-ivory {
+  background: var(--ivory);
+  --bg: var(--ivory);
+  --bg-card: rgba(228, 217, 195, 0.55);
+  --bg-card-deep: rgba(228, 217, 195, 0.85);
+  --on-bg: var(--ink);
+  --on-bg-muted: var(--graphite);
+  --on-bg-soft: var(--graphite-light);
+  --rule: rgba(26, 22, 20, 0.10);
+  --rule-strong: rgba(26, 22, 20, 0.22);
+  --accent: var(--brass);
+  --accent-deep: #6E5026;
+}
+
+/* Light section tone — raw silk (deeper than ivory) */
+.tone-silk {
+  background: var(--silk);
+  --bg: var(--silk);
+  --bg-card: rgba(242, 235, 222, 0.55);
+  --bg-card-deep: rgba(242, 235, 222, 0.90);
+  --on-bg: var(--ink);
+  --on-bg-muted: var(--graphite);
+  --on-bg-soft: var(--graphite-light);
+  --rule: rgba(26, 22, 20, 0.12);
+  --rule-strong: rgba(26, 22, 20, 0.24);
+  --accent: var(--brass);
+  --accent-deep: #6E5026;
+}
+
+/* Dark section tone — warm ink (default; here for explicitness) */
+.tone-ink {
+  background: var(--ink);
+  --bg: var(--ink);
+  --bg-card: rgba(58, 50, 44, 0.32);
+  --bg-card-deep: rgba(20, 16, 14, 0.55);
+  --on-bg: var(--ivory);
+  --on-bg-muted: rgba(242, 235, 222, 0.78);
+  --on-bg-soft: rgba(242, 235, 222, 0.55);
+  --rule: rgba(242, 235, 222, 0.14);
+  --rule-strong: rgba(242, 235, 222, 0.26);
+  --accent: var(--brass-light);
+  --accent-deep: var(--brass);
+}
+
+/* Theme bindings — preserve familiar Tailwind class names but reassign values
+   so `bg-deep` etc. produces the new warm palette without component churn. */
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-deep:        var(--ink);
+  --color-forest:      var(--char);
+  --color-moss:        var(--graphite);
+  --color-sage:        var(--taupe);
+  --color-cream:       var(--ivory);
+  --color-ivory:       var(--ivory-pure);
+  --color-gold:        var(--brass);
+  --color-gold-light:  var(--brass-light);
+  --color-brass:       var(--brass);
+  --color-brass-light: var(--brass-light);
+  --color-brass-glow:  var(--brass-glow);
+  --color-ink:         var(--ink);
+  --color-char:        var(--char);
+  --color-graphite:    var(--graphite);
+  --color-silk:        var(--silk);
+  --color-teal:        var(--teal);
+
+  --font-display:      var(--font-display);
+  --font-sans:         var(--font-sans);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
+* { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+
+html { scroll-behavior: smooth; }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--ink);
+  color: var(--ivory);
+  font-family: var(--font-sans);
+  font-feature-settings: "ss01", "cv11";
 }
+
+::selection { background: var(--brass); color: var(--ivory); }
+
+/* ───────── Type primitives ───────── */
+.font-display { font-family: var(--font-display); font-weight: 400; }
+.font-sans    { font-family: var(--font-sans); }
+
+.eyebrow {
+  font-family: var(--font-sans);
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: var(--on-bg-soft);
+  display: inline-flex;
+  align-items: center;
+  gap: 1rem;
+}
+.eyebrow::before {
+  content: "";
+  display: inline-block;
+  width: 2.25rem;
+  height: 1px;
+  background: var(--accent);
+}
+
+.h-display {
+  font-family: var(--font-display);
+  font-weight: 400;
+  letter-spacing: -0.012em;
+  line-height: 1.04;
+  color: var(--on-bg);
+}
+.h-display em {
+  font-style: italic;
+  color: var(--accent);
+  font-weight: 400;
+}
+
+.h-display-sm {
+  font-family: var(--font-display);
+  font-weight: 400;
+  letter-spacing: -0.005em;
+  line-height: 1.1;
+  color: var(--on-bg);
+}
+.h-display-sm em { font-style: italic; color: var(--accent); font-weight: 400; }
+
+.body-text {
+  color: var(--on-bg-muted);
+  font-size: 1rem;
+  line-height: 1.7;
+  max-width: 56ch;
+}
+
+.pill {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--rule-strong);
+  color: var(--on-bg);
+  text-transform: uppercase;
+  font-size: 0.72rem;
+  letter-spacing: 0.12em;
+  padding: 0.65rem 1rem;
+  font-weight: 500;
+  background: transparent;
+  transition: border-color 220ms ease, background 220ms ease, color 220ms ease;
+}
+.pill:hover {
+  border-color: var(--brass);
+  background: rgba(138, 106, 59, 0.06);
+  color: var(--brass);
+}
+
+/* ───────── CTAs ───────── */
+.cta-outline,
+.cta-fill {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.65rem;
+  font-family: var(--font-sans);
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  padding: 1.1rem 2rem;
+  border-radius: 1px;
+  transition:
+    background 420ms cubic-bezier(0.4, 0, 0.2, 1),
+    color 420ms cubic-bezier(0.4, 0, 0.2, 1),
+    border-color 420ms cubic-bezier(0.4, 0, 0.2, 1),
+    transform 420ms cubic-bezier(0.4, 0, 0.2, 1),
+    box-shadow 420ms cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
+  overflow: hidden;
+}
+.cta-outline::after,
+.cta-fill::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: 0.7rem;
+  width: 0;
+  height: 1px;
+  background: currentColor;
+  transition: width 480ms cubic-bezier(0.65, 0, 0.35, 1),
+    left 480ms cubic-bezier(0.65, 0, 0.35, 1);
+  opacity: 0.7;
+}
+.cta-outline:hover::after,
+.cta-fill:hover::after {
+  width: 1.4rem;
+  left: calc(50% - 0.7rem);
+}
+.cta-outline {
+  border: 1px solid color-mix(in srgb, var(--brass) 45%, transparent);
+  color: var(--on-bg);
+  background: transparent;
+}
+.cta-outline:hover {
+  border-color: var(--brass);
+  color: var(--brass);
+  background: color-mix(in srgb, var(--brass) 6%, transparent);
+  transform: translateY(-1px);
+}
+.cta-fill {
+  background: var(--brass);
+  color: var(--ivory-pure);
+  border: 1px solid var(--brass);
+  box-shadow: 0 1px 0 0 rgba(0, 0, 0, 0.12);
+}
+.cta-fill:hover {
+  background: var(--brass-light);
+  border-color: var(--brass-light);
+  color: var(--ivory-pure);
+  transform: translateY(-1px);
+  box-shadow: 0 6px 22px -6px rgba(138, 106, 59, 0.35);
+}
+.cta-nav {
+  padding: 0.82rem 1.35rem;
+  font-size: 0.66rem;
+  letter-spacing: 0.22em;
+}
+
+/* ───────── Cards ───────── */
+.stat-card {
+  background: var(--bg-card-deep);
+  border: 1px solid var(--rule);
+  padding: 1.6rem 1.35rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  transition: border-color 260ms ease, transform 260ms ease, background 260ms ease;
+}
+.stat-card:hover {
+  border-color: var(--brass);
+  transform: translateY(-2px);
+  background: var(--bg-card-deep);
+}
+
+.stat-num {
+  font-family: var(--font-display);
+  color: var(--brass);
+  font-size: clamp(2.4rem, 4vw, 3.4rem);
+  line-height: 1;
+  letter-spacing: -0.02em;
+  font-weight: 400;
+}
+.stat-unit {
+  font-family: var(--font-display);
+  color: var(--brass);
+  font-size: 0.95rem;
+  font-style: italic;
+  margin-left: 0.18rem;
+  letter-spacing: 0.02em;
+}
+.stat-label {
+  font-family: var(--font-sans);
+  color: var(--on-bg);
+  font-size: 0.74rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  margin-top: 0.45rem;
+}
+.stat-body {
+  color: var(--on-bg-soft);
+  font-size: 0.84rem;
+  line-height: 1.55;
+}
+
+.value-card {
+  border: 1px solid var(--rule);
+  background: var(--bg-card);
+  padding: 1.5rem;
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+  transition: border-color 240ms ease, background 240ms ease;
+}
+.value-card:hover {
+  border-color: var(--brass);
+  background: var(--bg-card-deep);
+}
+.value-card .star {
+  width: 1rem; height: 1rem;
+  flex-shrink: 0; margin-top: 0.4rem;
+  color: var(--brass);
+}
+
+/* ───────── Reveal-on-scroll ───────── */
+.reveal {
+  opacity: 0;
+  transform: translateY(22px);
+  transition:
+    opacity 1000ms cubic-bezier(0.2, 0.7, 0.2, 1),
+    transform 1100ms cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+.reveal.in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ───────── Type-mask reveal (print-magazine slide-up) ───────── */
+.mask {
+  display: inline-block;
+  overflow: hidden;
+  padding: 0.06em 0;
+}
+.mask > span {
+  display: inline-block;
+  transform: translateY(112%);
+  transition: transform 1200ms cubic-bezier(0.65, 0, 0.35, 1);
+  will-change: transform;
+}
+.mask.in > span { transform: translateY(0); }
+.mask.delay-1 > span { transition-delay: 120ms; }
+.mask.delay-2 > span { transition-delay: 240ms; }
+.mask.delay-3 > span { transition-delay: 360ms; }
+
+/* ───────── Ken Burns — slow cinematic zoom for hero ───────── */
+@keyframes ken-burns {
+  0%   { transform: scale(1.04) translate3d(0, 0, 0); }
+  50%  { transform: scale(1.10) translate3d(-1.5%, -1.2%, 0); }
+  100% { transform: scale(1.04) translate3d(0, 0, 0); }
+}
+.ken-burns {
+  animation: ken-burns 28s ease-in-out infinite;
+  will-change: transform;
+}
+
+/* ───────── Sticky-pinned pillar focus ───────── */
+.pillar-sticky {
+  position: sticky;
+  top: 12vh;
+  height: fit-content;
+}
+
+/* ───────── Scroll cue ───────── */
+.scroll-cue {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.9rem;
+  font-size: 0.6rem;
+  letter-spacing: 0.4em;
+  color: var(--on-bg-soft);
+  text-transform: uppercase;
+}
+.scroll-cue::after {
+  content: "";
+  width: 1px;
+  height: 56px;
+  background: linear-gradient(
+    to bottom,
+    transparent 0%,
+    var(--brass) 50%,
+    transparent 100%
+  );
+  background-size: 100% 200%;
+  animation: ribbon 3.6s ease-in-out infinite;
+}
+@keyframes ribbon {
+  0%, 100% { background-position: 0 -50%; opacity: 0.3; }
+  50%      { background-position: 0 100%; opacity: 1; }
+}
+
+/* ───────── Hairlines & rules ───────── */
+.rule-gold {
+  display: inline-block;
+  width: 3rem;
+  height: 1px;
+  background: var(--brass);
+}
+
+.pull-quote {
+  position: relative;
+  padding-left: 1.5rem;
+  border-left: 1px solid var(--brass);
+  font-family: var(--font-display);
+  font-style: italic;
+  color: var(--on-bg);
+  font-size: 1.35rem;
+  line-height: 1.45;
+  max-width: 38ch;
+}
+
+/* ───────── Hero atmosphere ───────── */
+.hero-glow {
+  background:
+    radial-gradient(ellipse 60% 50% at 75% 25%, rgba(212, 168, 118, 0.07), transparent 70%),
+    radial-gradient(ellipse 70% 60% at 50% 100%, rgba(44, 79, 74, 0.20), transparent 70%),
+    var(--ink);
+}
+
+/* ───────── Form ───────── */
+.field {
+  background: var(--bg-card-deep);
+  border: 1px solid var(--rule);
+  color: var(--on-bg);
+  padding: 0.9rem 1rem;
+  font-family: var(--font-sans);
+  font-size: 0.95rem;
+  width: 100%;
+  outline: none;
+  transition: border-color 200ms ease, background 200ms ease;
+}
+.field::placeholder { color: var(--on-bg-soft); }
+.field:focus { border-color: var(--brass); background: var(--bg-card-deep); }
+.field-label {
+  font-family: var(--font-sans);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  color: var(--brass);
+  text-transform: uppercase;
+  margin-bottom: 0.55rem;
+  display: block;
+}
+
+/* ───────── Hairline divider util ───────── */
+.hairline { background: var(--rule); }
+.hairline-strong { background: var(--rule-strong); }
