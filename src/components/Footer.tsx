@@ -18,7 +18,7 @@ export function Footer() {
           {/* Wordmark + tagline */}
           <div>
             <p className="font-display text-cream tracking-[0.32em] text-[1rem]">
-              KUMARAKOM
+              KUMARAKOM ESTATES
             </p>
             <p className="text-sage text-[0.62rem] tracking-[0.28em] mt-1">
               VEMBANAD BACKWATERS, KERALA
@@ -46,7 +46,7 @@ export function Footer() {
           {/* CTA */}
           <div className="flex lg:justify-end">
             <a href="#contact" className="cta-fill cta-nav">
-              Begin Our Partnership
+              Partner With Us
             </a>
           </div>
         </div>
@@ -97,6 +97,13 @@ export function Footer() {
           </p>
           <p className="text-sage/40 text-[0.67rem]">
             © 2026 · Alex Resorts &amp; Hotels Pvt. Ltd. · Photography: property archives
+          </p>
+        </div>
+
+        {/* Disclaimer */}
+        <div className="mt-6 pt-5 border-t border-[var(--rule)]">
+          <p className="text-sage/40 text-[0.64rem] leading-relaxed max-w-3xl">
+            The photographs showcased on this website represent the property during its operational period and are intended for reference purposes only.
           </p>
         </div>
 

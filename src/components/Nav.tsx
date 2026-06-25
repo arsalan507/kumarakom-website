@@ -34,7 +34,7 @@ export function Nav() {
         {/* Wordmark */}
         <a href="#hero" className="flex flex-col leading-tight shrink-0">
           <span className="font-display text-[1.05rem] tracking-[0.32em] text-cream">
-            KUMARAKOM
+            KUMARAKOM ESTATES
           </span>
           <span className="text-[0.62rem] tracking-[0.28em] text-sage mt-[2px]">
             VEMBANAD BACKWATERS, KERALA

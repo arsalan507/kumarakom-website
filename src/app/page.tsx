@@ -4,6 +4,7 @@ import { Property } from "@/components/Property";
 import { Destination } from "@/components/Destination";
 import { Vision } from "@/components/Vision";
 import { PartnerSection } from "@/components/PartnerSection";
+import { Owners } from "@/components/Owners";
 import { Gallery } from "@/components/Gallery";
 import { Contact } from "@/components/Contact";
 import { Footer } from "@/components/Footer";
@@ -21,6 +22,7 @@ export default function Home() {
         <Gallery />
         <Destination />
         <PartnerSection />
+        <Owners />
         <Contact />
       </main>
       <Footer />

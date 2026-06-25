@@ -25,7 +25,7 @@ const lora = Lora({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://kumarakom-invitation.com"),
-  title: "Kumarakom — A Rare Invitation | 14.41-Acre Vembanad Estate",
+  title: "Kumarakom Estates — A Rare Invitation | 14.41-Acre Vembanad Estate",
   description:
     "2,000 years of sacred history. 14.41 acres on the Vembanad backwater system. 900 ft of waterfront. 12+ licences. Zero encumbrances. Seeking a partner with vision.",
   keywords: [

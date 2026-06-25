@@ -32,7 +32,7 @@ const SUBTOPICS = [
   },
   {
     numeral: "II",
-    title: "The Colonial Twist",
+    title: "The Colonial Tryst",
     image: "/resort-restaurant-heritage.jpg",
     imageAlt: "The heritage restaurant — a living relic of the colonial era",
     body: "In 1847, Alfred George Baker arrived and reclaimed 500 acres of Vembanad Lake, converting it into fertile garden land. In 1881, he constructed the Victorian History House — the Baker family's residence for four generations. The locals called him Kari Saipu: a man who had gone so native he spoke Malayalam and wore the mundu. Sixteen kilometres from Kottayam, cradled by the legendary Vembanad Lake — the largest backwater system in Kerala — Kumarakom became the crown jewel of Kerala's backwater circuit.",

@@ -56,10 +56,10 @@ export function Investment() {
             </Reveal>
             <h2 className="h-display text-[clamp(2.2rem,4.5vw,3.6rem)] mt-8">
               <MaskHeading as="span" className="block">
-                A Generational
+                Where Opportunity
               </MaskHeading>
               <MaskHeading as="span" delay={1} className="block">
-                <em>Waterfront Asset</em>
+                Meets <em>Destination</em>
               </MaskHeading>
             </h2>
             <Reveal delay={200}>
