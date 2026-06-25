@@ -10,6 +10,8 @@ import { useEffect, useRef, type ReactNode } from "react";
  * Wrap each LINE in a separate MaskHeading for staggered multi-line reveals,
  * or wrap a whole heading for a single-line treatment.
  */
+type HtmlTag = keyof HTMLElementTagNameMap;
+
 export function MaskHeading({
   as: Tag = "span",
   children,
@@ -17,7 +19,7 @@ export function MaskHeading({
   className = "",
   spanClassName = "",
 }: {
-  as?: keyof React.JSX.IntrinsicElements;
+  as?: HtmlTag;
   children: ReactNode;
   delay?: 0 | 1 | 2 | 3;
   className?: string;
@@ -43,12 +45,14 @@ export function MaskHeading({
     return () => observer.disconnect();
   }, []);
 
+  const TagEl = Tag as React.ElementType;
+
   return (
-    <Tag
-      ref={ref as React.RefObject<HTMLElement>}
+    <TagEl
+      ref={ref}
       className={`mask ${delay ? `delay-${delay}` : ""} ${className}`}
     >
       <span className={spanClassName}>{children}</span>
-    </Tag>
+    </TagEl>
   );
 }

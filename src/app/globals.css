@@ -7,17 +7,17 @@
    ─────────────────────────────────────────────────────────────── */
 
 :root {
-  /* Warm dark foundations */
-  --ink:         #1A1614;        /* primary dark background */
-  --char:        #2A2520;        /* secondary dark / card on dark */
-  --graphite:    #3D352E;        /* warm body type on light bg */
-  --graphite-light: #6F6256;     /* muted text on light bg */
-  --taupe:       #A89580;        /* muted text on dark / sage replacement */
+  /* Forest green dark foundations — matches k.kineticxhub.com deployed */
+  --ink:         #0E1A14;        /* primary dark background */
+  --char:        #162019;        /* secondary dark / card on dark */
+  --graphite:    #2C3D35;        /* warm body type */
+  --graphite-light: #5A7060;     /* muted text */
+  --taupe:       #8FA898;        /* sage — muted on dark */
 
-  /* Warm light foundations */
-  --ivory:       #F2EBDE;        /* primary light background */
-  --silk:        #E4D9C3;        /* secondary light — slightly deeper */
-  --ivory-pure:  #FAF7F2;        /* highest contrast — type on dark */
+  /* Light foundations (kept for form/card contrast only) */
+  --ivory:       #F2EBDE;        /* used for text-on-dark, not bg */
+  --silk:        #E4D9C3;        /* light accent text */
+  --ivory-pure:  #FAF7F2;        /* highest contrast */
 
   /* Warm metallics */
   --brass:       #8A6A3B;        /* primary accent — oxidised brass */
@@ -40,7 +40,7 @@
   --accent-deep: var(--brass);
 
   --font-display: var(--font-cormorant), Georgia, "Times New Roman", serif;
-  --font-sans:    var(--font-inter), -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --font-sans:    var(--font-lora), "Lora", Georgia, "Times New Roman", serif;
 }
 
 /* Light section tone — ivory cream */
@@ -120,7 +120,8 @@ body {
   background: var(--ink);
   color: var(--ivory);
   font-family: var(--font-sans);
-  font-feature-settings: "ss01", "cv11";
+  font-feature-settings: "kern" 1, "liga" 1, "calt" 1;
+  -webkit-font-smoothing: antialiased;
 }
 
 ::selection { background: var(--brass); color: var(--ivory); }
@@ -131,9 +132,9 @@ body {
 
 .eyebrow {
   font-family: var(--font-sans);
-  font-size: 0.72rem;
-  font-weight: 500;
-  letter-spacing: 0.24em;
+  font-size: 0.7rem;
+  font-weight: 400;
+  letter-spacing: 0.18em;
   text-transform: uppercase;
   color: var(--on-bg-soft);
   display: inline-flex;
@@ -184,10 +185,10 @@ body {
   border: 1px solid var(--rule-strong);
   color: var(--on-bg);
   text-transform: uppercase;
-  font-size: 0.72rem;
-  letter-spacing: 0.12em;
-  padding: 0.65rem 1rem;
-  font-weight: 500;
+  font-size: 0.68rem;
+  letter-spacing: 0.1em;
+  padding: 0.6rem 0.95rem;
+  font-weight: 400;
   background: transparent;
   transition: border-color 220ms ease, background 220ms ease, color 220ms ease;
 }
@@ -206,9 +207,9 @@ body {
   justify-content: center;
   gap: 0.65rem;
   font-family: var(--font-sans);
-  font-size: 0.72rem;
-  font-weight: 500;
-  letter-spacing: 0.24em;
+  font-size: 0.7rem;
+  font-weight: 400;
+  letter-spacing: 0.18em;
   text-transform: uppercase;
   padding: 1.1rem 2rem;
   border-radius: 1px;
@@ -304,9 +305,9 @@ body {
 .stat-label {
   font-family: var(--font-sans);
   color: var(--on-bg);
-  font-size: 0.74rem;
-  font-weight: 600;
-  letter-spacing: 0.14em;
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
   margin-top: 0.45rem;
 }
@@ -376,11 +377,15 @@ body {
   will-change: transform;
 }
 
-/* ───────── Sticky-pinned pillar focus ───────── */
+/* ───────── Sticky-pinned pillar focus (desktop only — avoid overlap on mobile) ───────── */
 .pillar-sticky {
-  position: sticky;
-  top: 12vh;
   height: fit-content;
+}
+@media (min-width: 1024px) {
+  .pillar-sticky {
+    position: sticky;
+    top: 12vh;
+  }
 }
 
 /* ───────── Scroll cue ───────── */
@@ -390,7 +395,7 @@ body {
   align-items: center;
   gap: 0.9rem;
   font-size: 0.6rem;
-  letter-spacing: 0.4em;
+  letter-spacing: 0.28em;
   color: var(--on-bg-soft);
   text-transform: uppercase;
 }
@@ -410,6 +415,25 @@ body {
 @keyframes ribbon {
   0%, 100% { background-position: 0 -50%; opacity: 0.3; }
   50%      { background-position: 0 100%; opacity: 1; }
+}
+
+/* ───────── Marquee / infinite ticker ───────── */
+.marquee-wrap {
+  position: relative;
+  overflow: hidden;
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%);
+  mask-image: linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%);
+}
+.marquee-track {
+  display: flex;
+  flex-wrap: nowrap;
+  width: max-content;
+  animation: marquee-scroll 32s linear infinite;
+}
+.marquee-track:hover { animation-play-state: paused; }
+@keyframes marquee-scroll {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
 }
 
 /* ───────── Hairlines & rules ───────── */
@@ -456,9 +480,9 @@ body {
 .field:focus { border-color: var(--brass); background: var(--bg-card-deep); }
 .field-label {
   font-family: var(--font-sans);
-  font-size: 0.72rem;
-  font-weight: 600;
-  letter-spacing: 0.16em;
+  font-size: 0.68rem;
+  font-weight: 500;
+  letter-spacing: 0.14em;
   color: var(--brass);
   text-transform: uppercase;
   margin-bottom: 0.55rem;
@@ -468,3 +492,12 @@ body {
 /* ───────── Hairline divider util ───────── */
 .hairline { background: var(--rule); }
 .hairline-strong { background: var(--rule-strong); }
+
+/* ───────── Scrollbar hide utility (Tailwind v4 doesn't ship this) ───────── */
+.scrollbar-none {
+  scrollbar-width: none;         /* Firefox */
+  -ms-overflow-style: none;      /* IE/Edge */
+}
+.scrollbar-none::-webkit-scrollbar {
+  display: none;                 /* Chrome/Safari */
+}

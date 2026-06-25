@@ -25,7 +25,7 @@ const CARDS = [
   },
   {
     title: "Prime Kumarakom Address",
-    body: "Kumarakom Tourist Complex, North Kottayam. Adjacent to the bird sanctuary. On the banks of Vembanad Lake. An irreplaceable location in India's premier backwater destination.",
+    body: "Kumarakom Tourist Complex, North Kottayam. Adjacent to the bird sanctuary. On the banks of the Vembanad backwater system. An irreplaceable location in India's premier backwater destination.",
   },
 ];
 

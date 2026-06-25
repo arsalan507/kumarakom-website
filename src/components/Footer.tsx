@@ -1,68 +1,105 @@
+const NAV = [
+  { href: "#property", label: "Property" },
+  { href: "#destination", label: "Destination" },
+  { href: "#vision", label: "Vision" },
+  { href: "#partner", label: "Partner" },
+  { href: "#gallery", label: "Gallery" },
+  { href: "#contact", label: "Contact" },
+];
+
 export function Footer() {
   return (
     <footer className="bg-deep border-t border-[var(--hairline)]">
-      <div className="mx-auto max-w-[1320px] px-6 lg:px-10 py-16">
-        <div className="grid lg:grid-cols-3 gap-10 items-start">
+      <div className="mx-auto max-w-[1320px] px-6 lg:px-10 py-14 lg:py-16">
+
+        {/* Top row — wordmark · nav · CTA */}
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-10 items-start">
+
+          {/* Wordmark + tagline */}
           <div>
             <p className="font-display text-cream tracking-[0.32em] text-[1rem]">
               KUMARAKOM
             </p>
             <p className="text-sage text-[0.62rem] tracking-[0.28em] mt-1">
-              VEMBANAD LAKE, KERALA
+              VEMBANAD BACKWATERS, KERALA
             </p>
-            <p className="font-display italic text-sage mt-6 max-w-xs text-[0.95rem]">
-              A generational waterfront asset, presented in confidence.
+            <p className="font-display italic text-sage/80 mt-5 text-[0.9rem] leading-relaxed max-w-[260px]">
+              2,000 years of sacred history.
+              <br />
+              Seeking its defining partner.
             </p>
           </div>
 
-          <nav className="flex flex-wrap gap-x-6 gap-y-2 lg:justify-center text-[0.74rem] tracking-[0.18em] uppercase text-cream/70">
-            <a href="#property" className="hover:text-gold">
-              Property
-            </a>
-            <a href="#destination" className="hover:text-gold">
-              Destination
-            </a>
-            <a href="#vision" className="hover:text-gold">
-              Vision
-            </a>
-            <a href="#investment" className="hover:text-gold">
-              Investment
-            </a>
-            <a href="#operators" className="hover:text-gold">
-              Operators
-            </a>
-            <a href="#gallery" className="hover:text-gold">
-              Gallery
-            </a>
-            <a href="#contact" className="hover:text-gold">
-              Contact
-            </a>
+          {/* Nav — 2 clean columns of 3 */}
+          <nav className="grid grid-cols-2 gap-x-8 gap-y-3 lg:justify-self-center text-[0.72rem] tracking-[0.18em] uppercase">
+            {NAV.map((item) => (
+              <a
+                key={item.href}
+                href={item.href}
+                className="text-cream/60 hover:text-gold transition-colors"
+              >
+                {item.label}
+              </a>
+            ))}
           </nav>
 
-          <div className="flex gap-3 lg:justify-end">
-            <a href="#contact" className="cta-outline cta-nav">
-              For Investors
-            </a>
+          {/* CTA */}
+          <div className="flex lg:justify-end">
             <a href="#contact" className="cta-fill cta-nav">
-              For Operators
+              Begin Our Partnership
             </a>
           </div>
         </div>
 
-        <div className="mt-14 pt-8 border-t border-[var(--rule)] flex flex-col lg:flex-row justify-between gap-4 items-start lg:items-center">
-          <p className="text-sage text-[0.7rem] tracking-[0.18em] uppercase">
-            Private &amp; Confidential — For Discussion Purposes Only — All
-            Projections are Indicative
+        {/* Divider */}
+        <div className="mt-12 border-t border-[var(--rule)]" />
+
+        {/* Address row */}
+        <div className="mt-8 flex flex-col sm:flex-row gap-8 sm:gap-16">
+          <div>
+            <p className="text-[0.66rem] tracking-[0.22em] uppercase text-brass mb-2">
+              Property Location
+            </p>
+            <p className="font-display italic text-ivory/70 text-[0.88rem] leading-relaxed">
+              Kumarakom Tourist Complex, Chakrampady Road,<br />
+              Kumarakom North, Kottayam — 686 563, Kerala
+            </p>
+            <a
+              href="https://maps.google.com/?q=Kumarakom+Tourist+Complex+Kottayam+Kerala"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-1.5 mt-2.5 text-[0.68rem] tracking-[0.14em] uppercase text-brass hover:text-gold transition-colors"
+            >
+              <svg viewBox="0 0 16 16" width="10" height="10" fill="currentColor" aria-hidden>
+                <path d="M8 0C5.24 0 3 2.24 3 5c0 3.75 5 11 5 11s5-7.25 5-11c0-2.76-2.24-5-5-5zm0 7a2 2 0 1 1 0-4 2 2 0 0 1 0 4z"/>
+              </svg>
+              View on Google Maps
+            </a>
+          </div>
+
+          <div>
+            <p className="text-[0.66rem] tracking-[0.22em] uppercase text-brass mb-2">
+              Contact
+            </p>
+            <a
+              href="mailto:alexresorts@gmail.com"
+              className="font-display italic text-ivory/70 text-[0.88rem] hover:text-gold transition-colors"
+            >
+              alexresorts@gmail.com
+            </a>
+          </div>
+        </div>
+
+        {/* Bottom strip */}
+        <div className="mt-10 pt-6 border-t border-[var(--rule)] flex flex-col sm:flex-row justify-between gap-3 items-start sm:items-center">
+          <p className="text-sage/60 text-[0.67rem] tracking-[0.16em] uppercase">
+            Private &amp; Confidential — For Discussion Purposes Only
           </p>
-          <p className="text-sage/70 text-[0.7rem]">
-            © {new Date().getFullYear()} · Presented in confidence to qualified
-            parties.
+          <p className="text-sage/40 text-[0.67rem]">
+            © 2026 · Alex Resorts &amp; Hotels Pvt. Ltd. · Photography: property archives
           </p>
         </div>
 
-        <p className="mt-6 text-sage/50 text-[0.66rem] italic font-display">
-          Photography: Pexels contributors. Full credits available on request.
-        </p>
       </div>
     </footer>
   );

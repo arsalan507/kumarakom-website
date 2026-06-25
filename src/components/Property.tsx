@@ -14,7 +14,7 @@ const STATS: Stat[] = [
     num: "14.41",
     unit: "ac",
     label: "Total Land Extent",
-    body: "Largely rectangular, flat, Vembanad lakefront parcel.",
+    body: "Largely rectangular, flat, Vembanad backwater-front parcel.",
   },
   {
     num: "900",
@@ -33,26 +33,14 @@ const STATS: Stat[] = [
     body: "Substantial development headroom on a 14.41-acre site.",
   },
   {
-    num: "8",
-    unit: "yr",
-    label: "Operator Legacy",
-    body: "Operated continuously under a leading hospitality group with near-full occupancy throughout the tenure.",
+    num: "12+",
+    label: "Licences in Place",
+    body: "All approvals secured — waiting to be renewed.",
   },
   {
     num: "0",
     label: "Encumbrances",
-    body: "Clear, marketable title. Nil EC. No disputes whatsoever.",
-  },
-  {
-    num: "12+",
-    label: "Licences in Place",
-    body: "Including Beer & Wine. All operational approvals secured & current.",
-  },
-  {
-    num: "₹11–13",
-    unit: "Cr",
-    label: "Acre Benchmark",
-    body: "Vembanad waterfront market rate, per 2024–26 institutional transactions.",
+    body: "Clear, marketable title. Nil EC. No disputes, no bank loans.",
   },
 ];
 
@@ -69,23 +57,20 @@ const LICENCES = [
   "TMC — Kumarakom",
   "Approved Layout Plan",
   "Panchayat Institute Permission",
+  "Water & Rose Access",
 ];
 
 const FACTS = [
-  "700 metres from Kumarakom–Ernakulam main road",
-  "12 km from Kottayam Railway Station",
-  "72 km from Cochin International Airport",
-  "Approx. 900 feet of Vembanad Lake water frontage",
-  "FSI / FAR permissible: 2.5 — substantial development potential",
-  "Largely rectangular, flat topography — ideal for expansion",
-  "All statutory liabilities: Nil",
+  "Airport: 55 km from Kochi International Airport by road (approx 1.5 hrs)",
+  "Railway Station: 25 km from Kottayam town (approx 30 min)",
+  "Water & Road Access: 10 min boat ride to the property jetty or 800 m from the main road by vehicle",
 ];
 
 export function Property() {
   return (
-    <section id="property" className="tone-ivory relative">
+    <section id="property" className="tone-ink relative">
       <div className="mx-auto max-w-[1320px] px-6 lg:px-10 py-28 lg:py-40">
-        <div className="grid lg:grid-cols-2 gap-16 lg:gap-20">
+        <div className="grid lg:grid-cols-2 gap-16 lg:gap-20 lg:items-center">
           {/* Left — narrative + facts */}
           <div>
             <Reveal>
@@ -94,10 +79,10 @@ export function Property() {
 
             <h2 className="h-display text-[clamp(2.2rem,4.5vw,3.6rem)] mt-8">
               <MaskHeading as="span" className="block">
-                A Property Without
+                Shimmering Backwaters
               </MaskHeading>
               <MaskHeading as="span" delay={1} className="block">
-                <em>Parallel</em>
+                and Nature&rsquo;s <em>Luxury</em>
               </MaskHeading>
             </h2>
 
@@ -108,24 +93,21 @@ export function Property() {
             <Reveal delay={260}>
               <div className="mt-8 space-y-5 body-text">
                 <p>
-                  Set at the Kumarakom Tourist Complex on the northern banks of the
-                  Vembanad backwater system, this 14.41-acre estate represents one of
-                  the most exceptional hospitality acquisitions available in Kerala
-                  today.
+                  Kumarakom — the famed backwaters of Kerala, where the waters
+                  have meandered through history, between mythology and
+                  colonialism, to present-day modern literature and the world
+                  stage as a luxury destination.
                 </p>
                 <p>
-                  The resort has been operated continuously for more than two
-                  decades, the last eight years under an exclusive arrangement with
-                  one of India&rsquo;s most respected hospitality groups — who
-                  achieved near-full occupancy throughout the tenure and requested a
-                  20-year renewed lease with an expansion to 40–50 additional rooms.
+                  In the midst of this convergence lies a{" "}
+                  <strong>14.4-acre property</strong> where the pristine
+                  backwaters intertwine through the entire estate — a landscape
+                  that stills the mind and enchants the soul.
                 </p>
                 <p>
-                  The land is held with clear, marketable title. No bank loans. Nil
-                  encumbrance certificate. All building sanctions received. No
-                  coastal regulation zone violations. The property stands fully
-                  developed, comprehensively licensed, and entirely ready — awaiting
-                  only the vision to match its potential.
+                  This unique property in the heart of Kumarakom, with a
+                  conducive climate for Ayurveda treatments, is perfectly placed
+                  to capture the booming wellness market in India.
                 </p>
               </div>
             </Reveal>
@@ -165,22 +147,29 @@ export function Property() {
           </div>
         </div>
 
-        {/* Licence band */}
+        {/* Licence marquee */}
         <Reveal delay={200}>
           <div className="mt-20 pt-10 border-t border-[var(--rule)]">
-            <p className="font-sans text-[0.72rem] tracking-[0.22em] uppercase text-brass mb-6 flex items-center gap-4">
+            <p className="font-sans text-[0.72rem] tracking-[0.22em] uppercase text-brass mb-8 flex items-center gap-4">
               <span className="rule-gold" />
-              All Licences &amp; Permissions in Place
+              12+ Licences — Waiting to be Renewed
             </p>
-            <div className="flex flex-wrap gap-2.5">
-              {LICENCES.map((l) => (
-                <span key={l} className="pill">
-                  {l}
-                </span>
-              ))}
-            </div>
           </div>
         </Reveal>
+
+        {/* Full-bleed ticker */}
+        <div className="marquee-wrap" aria-label="Licences in place">
+          <div className="marquee-track">
+            {[...LICENCES, ...LICENCES].map((l, i) => (
+              <span
+                key={i}
+                className="pill shrink-0 whitespace-nowrap mx-3"
+              >
+                {l}
+              </span>
+            ))}
+          </div>
+        </div>
       </div>
     </section>
   );

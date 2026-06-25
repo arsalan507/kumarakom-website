@@ -8,9 +8,6 @@ import { MaskHeading } from "./MaskHeading";
 export function Hero() {
   const imgWrapRef = useRef<HTMLDivElement>(null);
 
-  // Single-section hero parallax: image drifts at 0.4× scroll velocity while
-  // the foreground stays fixed. Stops contributing transform once the section
-  // is fully past viewport to keep paint cheap.
   useEffect(() => {
     const el = imgWrapRef.current;
     if (!el) return;
@@ -40,7 +37,6 @@ export function Hero() {
       id="hero"
       className="relative min-h-[100svh] hero-glow flex items-center justify-center overflow-hidden"
     >
-      {/* Parallax wrapper — image is inside a slow Ken Burns animation */}
       <div
         ref={imgWrapRef}
         className="absolute inset-0 will-change-transform"
@@ -48,18 +44,18 @@ export function Hero() {
       >
         <div className="absolute inset-0 ken-burns">
           <Image
-            src="/hero-vembanad-dawn.jpeg"
-            alt="Vembanad backwater at dawn — houseboat passing the palms"
+            src="/resort-duck-canal.jpg"
+            alt="The private canal — white ducks, still green water, the cottages and backwaters beyond"
             fill
             priority
             sizes="100vw"
             className="object-cover"
-            style={{ filter: "saturate(0.9) contrast(1.08) brightness(0.6)" }}
+            style={{ objectPosition: "center 55%", filter: "saturate(0.88) contrast(1.05) brightness(0.48)" }}
           />
         </div>
       </div>
 
-      {/* Top vignette — keeps nav readable */}
+      {/* Top vignette */}
       <div
         className="absolute inset-x-0 top-0 h-52 pointer-events-none z-[1]"
         style={{
@@ -67,7 +63,7 @@ export function Hero() {
             "linear-gradient(to bottom, rgba(14,26,20,0.92) 0%, rgba(14,26,20,0.45) 60%, transparent 100%)",
         }}
       />
-      {/* Bottom vignette — readability + section blend */}
+      {/* Bottom vignette */}
       <div
         className="absolute inset-x-0 bottom-0 h-72 pointer-events-none z-[1]"
         style={{
@@ -75,7 +71,7 @@ export function Hero() {
             "linear-gradient(to top, rgba(14,26,20,0.95) 0%, rgba(14,26,20,0.4) 70%, transparent 100%)",
         }}
       />
-      {/* Center radial darken — headline contrast */}
+      {/* Center radial darken */}
       <div
         className="absolute inset-0 pointer-events-none z-[1]"
         style={{
@@ -83,7 +79,7 @@ export function Hero() {
             "radial-gradient(ellipse 75% 70% at 50% 55%, rgba(14,26,20,0.65), rgba(14,26,20,0.2) 70%, transparent 100%)",
         }}
       />
-      {/* Gold light wash from upper right — suggests dawn / lantern glow */}
+      {/* Gold light wash */}
       <div
         className="absolute inset-0 pointer-events-none z-[1]"
         style={{
@@ -93,17 +89,8 @@ export function Hero() {
       />
 
       <div className="relative z-10 mx-auto max-w-[920px] px-6 text-center py-32">
-        <Reveal>
-          <div className="text-[0.7rem] tracking-[0.28em] uppercase text-sage flex items-center justify-center gap-3 mb-10">
-            <span>Kumarakom</span>
-            <span className="text-gold">·</span>
-            <span>Kerala</span>
-            <span className="text-gold">·</span>
-            <span>Vembanad Lake</span>
-          </div>
-        </Reveal>
 
-        <h1 className="h-display text-[clamp(2.6rem,7vw,5.4rem)]">
+        <h1 className="h-display text-[clamp(2.2rem,6vw,4.6rem)]">
           <MaskHeading as="span" className="block">
             A Rare Invitation —
           </MaskHeading>
@@ -112,33 +99,27 @@ export function Hero() {
           </MaskHeading>
         </h1>
 
-        <Reveal delay={500}>
-          <p className="font-display italic text-sage mt-8 text-[clamp(1rem,1.6vw,1.25rem)]">
-            14.41 Acres &middot; 900 Feet of Waterfront &middot; Zero Encumbrances
-          </p>
-        </Reveal>
-
         <Reveal delay={620}>
-          <p className="body-text mx-auto mt-10 text-[0.98rem] text-cream/70">
-            A generational waterfront asset on the Vembanad backwater system,
-            presented in confidence to a discerning circle of investors and
-            world-class operators.
+          <p className="font-display italic text-sage mt-8 text-[clamp(0.95rem,1.5vw,1.15rem)] max-w-[560px] mx-auto">
+            14.41 Acres&nbsp;&nbsp;·&nbsp;&nbsp;900 Feet of Waterfront&nbsp;&nbsp;·&nbsp;&nbsp;Zero Encumbrances
           </p>
         </Reveal>
 
-        <Reveal delay={740}>
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mt-12">
-            <a href="#investment" className="cta-outline">
-              For Investors
-            </a>
-            <a href="#operators" className="cta-fill">
-              For Operators
-            </a>
-          </div>
+        <Reveal delay={750}>
+          <p className="body-text mx-auto mt-6 text-[0.95rem] text-cream/65 max-w-[560px]">
+            A generational waterfront asset on the backwaters of Vembanad Lake, presented privately to a discerning circle of investors and world-class operators.
+          </p>
         </Reveal>
 
         <Reveal delay={960}>
-          <div className="mt-24 flex justify-center">
+          <div className="mt-20 flex justify-center gap-4">
+            <a href="#contact?role=investor" className="cta-outline">For Investors</a>
+            <a href="#contact?role=operator" className="cta-fill">For Operators</a>
+          </div>
+        </Reveal>
+
+        <Reveal delay={1100}>
+          <div className="mt-14 flex justify-center">
             <span className="scroll-cue">Scroll</span>
           </div>
         </Reveal>

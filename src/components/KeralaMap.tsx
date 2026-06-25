@@ -73,6 +73,35 @@ export function KeralaMap() {
         KOCHI
       </text>
 
+      {/* Cochin International Airport — 72 km from Kumarakom */}
+      <g>
+        <rect x="97" y="205" width="6" height="5" rx="1" fill="rgba(138,106,59,0.55)" />
+        <line x1="100" y1="202" x2="100" y2="205" stroke="rgba(138,106,59,0.55)" strokeWidth="1" />
+        <line x1="97" y1="208" x2="94" y2="208" stroke="rgba(138,106,59,0.4)" strokeWidth="0.8" strokeDasharray="2 2" />
+        <line x1="103" y1="208" x2="106" y2="208" stroke="rgba(138,106,59,0.4)" strokeWidth="0.8" strokeDasharray="2 2" />
+        <text
+          x="92"
+          y="219"
+          fill="rgba(61,53,46,0.6)"
+          fontFamily="var(--font-sans)"
+          fontSize="7"
+          letterSpacing="0.8"
+          textAnchor="middle"
+        >
+          AIRPORT
+        </text>
+        <text
+          x="92"
+          y="227"
+          fill="rgba(138,106,59,0.65)"
+          fontFamily="var(--font-sans)"
+          fontSize="6.5"
+          textAnchor="middle"
+        >
+          55 km
+        </text>
+      </g>
+
       {/* Kumarakom — primary animated pin */}
       <circle cx="155" cy="270" r="22" fill="url(#glowKumarakom)">
         <animate
@@ -131,6 +160,33 @@ export function KeralaMap() {
         VEMBANAD LAKE
       </text>
 
+      {/* Kottayam Railway Station — 12 km from Kumarakom */}
+      <g>
+        <rect x="172" y="286" width="9" height="7" rx="1" fill="none" stroke="rgba(138,106,59,0.55)" strokeWidth="1" />
+        <line x1="172" y1="290" x2="181" y2="290" stroke="rgba(138,106,59,0.55)" strokeWidth="0.7" />
+        <circle cx="174.5" cy="293" r="1.5" fill="rgba(138,106,59,0.5)" />
+        <circle cx="178.5" cy="293" r="1.5" fill="rgba(138,106,59,0.5)" />
+        <text
+          x="188"
+          y="290"
+          fill="rgba(61,53,46,0.6)"
+          fontFamily="var(--font-sans)"
+          fontSize="7"
+          letterSpacing="0.8"
+        >
+          KOTTAYAM RLY
+        </text>
+        <text
+          x="188"
+          y="299"
+          fill="rgba(138,106,59,0.65)"
+          fontFamily="var(--font-sans)"
+          fontSize="6.5"
+        >
+          12 km
+        </text>
+      </g>
+
       <circle cx="155" cy="455" r="3" fill="rgba(138,106,59,0.7)" />
       <text
         x="165"
@@ -141,6 +197,39 @@ export function KeralaMap() {
         letterSpacing="1.5"
       >
         THIRUVANANTHAPURAM
+      </text>
+
+      {/* Vembanad Lake — shown as a teal water body east of the coastline */}
+      <ellipse
+        cx="175"
+        cy="270"
+        rx="28"
+        ry="55"
+        fill="rgba(44,134,124,0.12)"
+        stroke="rgba(44,134,124,0.35)"
+        strokeWidth="1"
+      />
+      <text
+        x="215"
+        y="250"
+        fill="rgba(44,134,124,0.6)"
+        fontFamily="var(--font-display)"
+        fontStyle="italic"
+        fontSize="8"
+        letterSpacing="0.5"
+      >
+        Vembanad
+      </text>
+      <text
+        x="218"
+        y="260"
+        fill="rgba(44,134,124,0.6)"
+        fontFamily="var(--font-display)"
+        fontStyle="italic"
+        fontSize="8"
+        letterSpacing="0.5"
+      >
+        Lake
       </text>
 
       {/* Backwater flow lines (teal — the single jewel accent) */}
@@ -186,7 +275,7 @@ export function KeralaMap() {
         fontSize="11"
         textAnchor="middle"
       >
-        Arabian Sea — 44 Rivers — Vembanad Lake
+        Arabian Sea — 44 Rivers — Vembanad Backwaters
       </text>
     </svg>
   );

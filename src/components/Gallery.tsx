@@ -11,51 +11,58 @@ type Tile = {
 
 const TILES: Tile[] = [
   {
-    src: "/hero-vembanad-dawn.jpeg",
-    caption: "Vembanad at dawn — still, golden, infinite.",
-    variant: "hero", // top wide image
+    src: "/resort-duck-canal.jpg",
+    caption: "The private canal",
+    variant: "hero",
   },
   {
-    src: "/gallery-cottage.jpeg",
-    caption: "Tiled roof, lily pond — the architecture of slowness.",
-    variant: "tall",
-  },
-  {
-    src: "/gallery-kingfisher.jpeg",
-    caption: "The kingfisher — patron of the sanctuary.",
+    src: "/resort-garden.jpg",
+    caption: "The garden",
     variant: "square",
   },
   {
-    src: "/gallery-lotus.jpeg",
-    caption: "Born of water, untouched by it.",
+    src: "/resort-restaurant-heritage.jpg",
+    caption: "Heritage restaurant",
     variant: "square",
   },
   {
-    src: "/gallery-kettuvallam.jpeg",
-    caption: "A kettuvallam, drifting — the way it has for centuries.",
+    src: "/resort-ayurveda.jpg",
+    caption: "Ayurveda centre",
+    variant: "square",
+  },
+  {
+    src: "/resort-coracle.jpg",
+    caption: "The canal",
+    variant: "square",
+  },
+  {
+    src: "/resort-pool.jpg",
+    caption: "Swimming pool",
     variant: "wide",
   },
   {
-    src: "/gallery-ayurveda.jpeg",
-    caption: "The ritual — oil, brass, breath.",
-    variant: "tall",
-  },
-  {
-    src: "/gallery-thatched.jpeg",
-    caption: "A cottage between water and sky.",
+    src: "/resort-restaurant-ac.jpg",
+    caption: "AC restaurant",
     variant: "square",
   },
   {
-    src: "/gallery-aerial.jpeg",
-    caption: "Kerala, from above — a watercolour seen from a satellite.",
-    variant: "wide",
+    src: "/resort-pool-night.jpg",
+    caption: "Poolside evening",
+    variant: "square",
   },
 ];
 
 export function Gallery() {
   return (
-    <section id="gallery" className="tone-ink relative">
-      <div className="mx-auto max-w-[1320px] px-6 lg:px-10 pt-28 lg:pt-40 pb-16">
+    <section
+      id="gallery"
+      className="tone-ink relative"
+      style={{
+        background: "linear-gradient(to bottom, var(--char) 0%, var(--ink) 40%)",
+        borderTop: "1px solid rgba(201,169,110,0.18)",
+      }}
+    >
+      <div className="mx-auto max-w-[1320px] px-6 lg:px-10 pt-14 lg:pt-20 pb-16">
         <div className="max-w-2xl">
           <Reveal>
             <span className="eyebrow">The Atmosphere</span>
@@ -67,7 +74,7 @@ export function Gallery() {
           </h2>
           <Reveal delay={240}>
             <p className="body-text mt-8 text-[1.02rem]">
-              To arrive here by boat at dusk — the lake stilled to a mirror, the
+              To arrive here by boat at dusk — the backwaters stilled to a mirror, the
               light breaking gold across the palms — is to understand immediately
               why Kumarakom holds such enduring power over those who find it.
             </p>
@@ -75,18 +82,32 @@ export function Gallery() {
         </div>
       </div>
 
-      {/* Editorial 4-column masonry-style grid */}
+      {/* Disclaimer banner */}
+      <Reveal>
+        <div
+          className="mx-6 lg:mx-10 mb-10 px-6 py-4 border flex items-start gap-4"
+          style={{ borderColor: "var(--rule-strong)", background: "var(--bg-card-deep)" }}
+        >
+          <svg viewBox="0 0 20 20" fill="currentColor" className="w-4 h-4 shrink-0 mt-0.5" style={{ color: "var(--brass)" }} aria-hidden>
+            <path fillRule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a.75.75 0 000 1.5h.253a.25.25 0 01.244.304l-.459 2.066A1.75 1.75 0 0010.747 15H11a.75.75 0 000-1.5h-.253a.25.25 0 01-.244-.304l.459-2.066A1.75 1.75 0 009.253 9H9z" clipRule="evenodd" />
+          </svg>
+          <p className="text-[0.8rem] leading-relaxed" style={{ color: "var(--on-bg-soft)" }}>
+            <span className="font-semibold" style={{ color: "var(--on-bg)" }}>Archival images.</span>
+            {" "}These photographs document the estate in its current pre-renovation state. The property will undergo comprehensive redevelopment prior to operation. AI-rendered visuals of the proposed renovation are available on request.
+          </p>
+        </div>
+      </Reveal>
+
+      {/* Editorial 4-column grid — all square/fixed aspect tiles to avoid blank spaces */}
       <div
-        className="
-          grid grid-cols-2 lg:grid-cols-4 gap-px
-        "
+        className="grid grid-cols-2 lg:grid-cols-4 gap-px"
         style={{ background: "var(--rule)" }}
       >
         {TILES.map((t, i) => {
           const spanCls = {
-            hero: "col-span-2 lg:col-span-4 aspect-[16/7]",
-            wide: "col-span-2 aspect-[16/9]",
-            tall: "row-span-2 col-span-1 aspect-[3/4] lg:aspect-[1/1.7]",
+            hero: "col-span-2 lg:col-span-4 aspect-[16/6]",
+            wide: "col-span-2 aspect-[2/1]",
+            tall: "col-span-1 aspect-square",
             square: "col-span-1 aspect-square",
           }[t.variant];
 
@@ -106,10 +127,6 @@ export function Gallery() {
                   }
                   className="object-cover opacity-[0.86] group-hover:opacity-100 group-hover:scale-[1.04] transition-all duration-[1400ms] ease-out"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-ink/85 via-ink/15 to-transparent" />
-                <figcaption className="absolute left-6 right-6 bottom-5 font-display italic text-brass-light text-[clamp(0.85rem,1vw,1.05rem)] leading-snug">
-                  {t.caption}
-                </figcaption>
               </figure>
             </Reveal>
           );

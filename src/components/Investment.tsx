@@ -3,7 +3,7 @@ import { MaskHeading } from "./MaskHeading";
 
 const BENCHMARKS = [
   { label: "ITC Zuri Kumarakom — 18 acres", value: "₹11.39 Cr/ac" },
-  { label: "Purity, Vembanad Lake — 2.5 acres", value: "₹12.80 Cr/ac" },
+  { label: "Purity, Vembanad Backwaters — 2.5 acres", value: "₹12.80 Cr/ac" },
   { label: "Waterfront baseline (Vembanad)", value: "₹11–13 Cr/ac" },
   { label: "Price per room (luxury segment)", value: "₹2.29–2.85 Cr" },
   { label: "GOP margin — operated hotel", value: "33–34%" },
@@ -69,7 +69,7 @@ export function Investment() {
               <div className="mt-10 space-y-5 body-text">
                 <p>
                   The Kerala backwater luxury segment has established a clear market
-                  rate: ₹11–13 crore per acre for Vembanad lakefront land, benchmarked
+                  rate: ₹11–13 crore per acre for Vembanad backwater-front land, benchmarked
                   by ITC&rsquo;s acquisition of the Zuri Kumarakom at ₹11.39 Cr/acre
                   and the Apeejay Surrendra Park Hotels transaction at ₹12.8 Cr/acre
                   for Vembanad waterfront in 2024–26.

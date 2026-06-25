@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Kumarakom — Font Options for Rosh</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=Playfair+Display:ital,wght@0,400;0,500;1,400;1,500&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Lora:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet" />
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body { background: #0a0a0a; color: #F2EBD8; font-family: sans-serif; }
+
+  .page-header {
+    text-align: center;
+    padding: 48px 24px 32px;
+    border-bottom: 1px solid rgba(242,235,216,0.1);
+  }
+  .page-header h1 {
+    font-family: 'Libre Baskerville', serif;
+    font-size: 1.1rem;
+    font-weight: 400;
+    letter-spacing: 0.26em;
+    text-transform: uppercase;
+    color: rgba(242,235,216,0.5);
+    margin-bottom: 8px;
+  }
+  .page-header p {
+    font-family: 'Lora', serif;
+    font-size: 0.8rem;
+    color: rgba(242,235,216,0.32);
+    letter-spacing: 0.05em;
+  }
+
+  .option {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    border-bottom: 2px solid rgba(255,255,255,0.05);
+  }
+
+  .option-bg {
+    position: absolute;
+    inset: 0;
+    background-image: url('/resort-duck-canal.jpg');
+    background-size: cover;
+    background-position: center;
+    filter: saturate(0.85) contrast(1.08) brightness(0.44);
+  }
+  .option-bg::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse 80% 72% at 50% 58%, rgba(10,18,14,0.72), rgba(10,18,14,0.18) 72%, transparent 100%);
+  }
+
+  .option-label {
+    position: absolute;
+    top: 28px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    white-space: nowrap;
+  }
+  .badge {
+    background: rgba(10,18,14,0.88);
+    border: 1px solid rgba(201,169,110,0.38);
+    padding: 5px 16px;
+    font-family: 'Lora', serif;
+    font-size: 0.62rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: #C9A96E;
+  }
+  .font-name {
+    font-family: 'Lora', serif;
+    font-size: 0.64rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: rgba(242,235,216,0.38);
+  }
+
+  .option-content {
+    position: relative;
+    z-index: 5;
+    text-align: center;
+    max-width: 880px;
+    padding: 120px 32px 140px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .eyebrow {
+    font-family: 'Lora', serif;
+    font-size: 0.62rem;
+    letter-spacing: 0.24em;
+    text-transform: uppercase;
+    color: rgba(165,192,180,0.7);
+    margin-bottom: 38px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .dot { color: #C9A96E; font-size: 0.5rem; }
+
+  .subline {
+    font-family: 'Lora', serif;
+    font-size: clamp(0.88rem, 1.3vw, 1.05rem);
+    font-style: italic;
+    color: rgba(165,192,180,0.65);
+    margin-top: 30px;
+    letter-spacing: 0.03em;
+  }
+
+  .body-p {
+    font-family: 'Lora', serif;
+    max-width: 500px;
+    font-size: 0.93rem;
+    line-height: 1.78;
+    color: rgba(242,235,216,0.55);
+    margin-top: 28px;
+  }
+
+  .option-note {
+    position: absolute;
+    bottom: 28px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10;
+    text-align: center;
+    width: calc(100% - 48px);
+    max-width: 640px;
+    padding: 14px 22px;
+    background: rgba(10,18,14,0.9);
+    border: 1px solid rgba(201,169,110,0.18);
+  }
+  .option-note p {
+    font-family: 'Lora', serif;
+    font-size: 0.72rem;
+    color: rgba(242,235,216,0.42);
+    line-height: 1.62;
+  }
+  .option-note strong { color: #C9A96E; font-weight: 500; }
+
+  .scroll-hint {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    margin-top: 52px;
+    font-family: 'Lora', serif;
+    font-size: 0.52rem;
+    letter-spacing: 0.32em;
+    text-transform: uppercase;
+    color: rgba(165,192,180,0.38);
+  }
+  .scroll-hint::after {
+    content: '';
+    width: 1px;
+    height: 44px;
+    background: linear-gradient(to bottom, #C9A96E, transparent);
+  }
+
+  /* ── Option A: Libre Baskerville ── */
+  .opt-a h1 {
+    font-family: 'Libre Baskerville', serif;
+    font-weight: 400;
+    font-size: clamp(2.4rem, 5.8vw, 4.8rem);
+    line-height: 1.12;
+    letter-spacing: -0.006em;
+    color: #F2EBD8;
+  }
+  .opt-a h1 em { font-style: italic; color: #C9A96E; }
+
+  /* ── Option B: Cormorant Garamond ── */
+  .opt-b h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 400;
+    font-size: clamp(3.2rem, 7.4vw, 6rem);
+    line-height: 1.03;
+    letter-spacing: -0.014em;
+    color: #F2EBD8;
+  }
+  .opt-b h1 em { font-style: italic; color: #C9A96E; }
+
+  /* ── Option C: Playfair Display ── */
+  .opt-c h1 {
+    font-family: 'Playfair Display', serif;
+    font-weight: 400;
+    font-size: clamp(2.8rem, 6.6vw, 5.4rem);
+    line-height: 1.08;
+    letter-spacing: -0.01em;
+    color: #F2EBD8;
+  }
+  .opt-c h1 em { font-style: italic; color: #C9A96E; }
+
+  /* ── Summary ── */
+  .summary {
+    padding: 64px 32px 80px;
+    max-width: 860px;
+    margin: 0 auto;
+    text-align: center;
+  }
+  .summary-title {
+    font-family: 'Libre Baskerville', serif;
+    font-size: 0.78rem;
+    font-weight: 400;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: rgba(242,235,216,0.32);
+    margin-bottom: 36px;
+  }
+  .summary-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+  }
+  @media (max-width: 640px) {
+    .summary-grid { grid-template-columns: 1fr; }
+  }
+  .sc {
+    border: 1px solid rgba(201,169,110,0.18);
+    padding: 22px 16px;
+    text-align: left;
+  }
+  .sc-tag {
+    font-family: 'Lora', serif;
+    font-size: 0.58rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: #C9A96E;
+    margin-bottom: 12px;
+  }
+  .sc-headline {
+    font-size: 1.1rem;
+    font-weight: 400;
+    color: #F2EBD8;
+    margin-bottom: 10px;
+    line-height: 1.25;
+  }
+  .sc.a .sc-headline { font-family: 'Libre Baskerville', serif; font-size: 0.95rem; }
+  .sc.b .sc-headline { font-family: 'Cormorant Garamond', serif; font-size: 1.3rem; }
+  .sc.c .sc-headline { font-family: 'Playfair Display', serif; font-size: 1.05rem; }
+  .sc-feel {
+    font-family: 'Lora', serif;
+    font-size: 0.66rem;
+    font-style: italic;
+    color: rgba(201,169,110,0.55);
+  }
+</style>
+</head>
+<body>
+
+<div class="page-header">
+  <h1>Kumarakom — Font Options</h1>
+  <p>Three directions · Please reply A, B, or C</p>
+</div>
+
+<!-- ═══ A: Libre Baskerville ═══ -->
+<div class="option opt-a">
+  <div class="option-bg"></div>
+  <div class="option-label">
+    <span class="badge">Option A</span>
+    <span class="font-name">Libre Baskerville</span>
+  </div>
+  <div class="option-content">
+    <div class="eyebrow">
+      <span>Kumarakom, Kerala</span><span class="dot">·</span>
+      <span>Vembanad Backwaters</span>
+    </div>
+    <h1>
+      The Tale of Gods.<br />
+      <em>Kumarakom.</em>
+    </h1>
+    <p class="subline">Where the Water Moves Through the Property.</p>
+    <p class="body-p">
+      The gods named it. A missionary built it. A Booker Prize laureate
+      immortalised it. We are seeking the one partner who will define
+      what it becomes.
+    </p>
+    <div class="scroll-hint">Scroll</div>
+  </div>
+  <div class="option-note">
+    <p><strong>Libre Baskerville</strong> — Classic, grounded, institutional authority. The font of heritage brands and law firms. Solid and trustworthy — fitting for a property that leads with clear title and zero encumbrances.</p>
+  </div>
+</div>
+
+<!-- ═══ B: Cormorant Garamond ═══ -->
+<div class="option opt-b">
+  <div class="option-bg"></div>
+  <div class="option-label">
+    <span class="badge">Option B</span>
+    <span class="font-name">Cormorant Garamond</span>
+  </div>
+  <div class="option-content">
+    <div class="eyebrow">
+      <span>Kumarakom, Kerala</span><span class="dot">·</span>
+      <span>Vembanad Backwaters</span>
+    </div>
+    <h1>
+      The Tale of Gods.<br />
+      <em>Kumarakom.</em>
+    </h1>
+    <p class="subline">Where the Water Moves Through the Property.</p>
+    <p class="body-p">
+      The gods named it. A missionary built it. A Booker Prize laureate
+      immortalised it. We are seeking the one partner who will define
+      what it becomes.
+    </p>
+    <div class="scroll-hint">Scroll</div>
+  </div>
+  <div class="option-note">
+    <p><strong>Cormorant Garamond</strong> — Sacred manuscript. Ultra-thin letterforms with extreme calligraphic contrast. The most ancient-feeling of the three. Feels hand-cut, literary, timeless — like the Kerala heritage itself.</p>
+  </div>
+</div>
+
+<!-- ═══ C: Playfair Display ═══ -->
+<div class="option opt-c">
+  <div class="option-bg"></div>
+  <div class="option-label">
+    <span class="badge">Option C</span>
+    <span class="font-name">Playfair Display</span>
+  </div>
+  <div class="option-content">
+    <div class="eyebrow">
+      <span>Kumarakom, Kerala</span><span class="dot">·</span>
+      <span>Vembanad Backwaters</span>
+    </div>
+    <h1>
+      The Tale of Gods.<br />
+      <em>Kumarakom.</em>
+    </h1>
+    <p class="subline">Where the Water Moves Through the Property.</p>
+    <p class="body-p">
+      The gods named it. A missionary built it. A Booker Prize laureate
+      immortalised it. We are seeking the one partner who will define
+      what it becomes.
+    </p>
+    <div class="scroll-hint">Scroll</div>
+  </div>
+  <div class="option-note">
+    <p><strong>Playfair Display</strong> — Luxury editorial. Bolder strokes, dramatic contrast. Feels like a luxury magazine cover — confident, sophisticated, immediately premium.</p>
+  </div>
+</div>
+
+<!-- Summary -->
+<div class="summary">
+  <p class="summary-title">Which feels right?</p>
+  <div class="summary-grid">
+    <div class="sc a">
+      <div class="sc-tag">Option A</div>
+      <div class="sc-headline">The Tale of Gods.<br><em>Kumarakom.</em></div>
+      <div class="sc-feel">"Classic authority. Heritage trust."</div>
+    </div>
+    <div class="sc b">
+      <div class="sc-tag">Option B</div>
+      <div class="sc-headline">The Tale of Gods.<br><em>Kumarakom.</em></div>
+      <div class="sc-feel">"Sacred manuscript. Ancient & literary."</div>
+    </div>
+    <div class="sc c">
+      <div class="sc-tag">Option C</div>
+      <div class="sc-headline">The Tale of Gods.<br><em>Kumarakom.</em></div>
+      <div class="sc-feel">"Luxury editorial. Bold & confident."</div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

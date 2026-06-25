@@ -4,7 +4,7 @@ import { KeralaMap } from "./KeralaMap";
 import { MaskHeading } from "./MaskHeading";
 
 const PILLS = [
-  "Vembanad Lake",
+  "Vembanad Backwaters",
   "Bird Sanctuary",
   "Ayurveda",
   "Houseboat Culture",
@@ -22,146 +22,188 @@ const STATS = [
   { label: "Ayurveda Tourist Growth (annual)", value: "20–25%" },
 ];
 
+const SUBTOPICS = [
+  {
+    numeral: "I",
+    title: "Ancient Mythological Origin",
+    image: "/gallery-aerial.jpeg",
+    imageAlt: "Aerial view of Vembanad backwaters — the sacred waters of Kumarakom",
+    body: "Kumarakom — the land where the ten rivers rush to converge and finally find peace in the heart of the Vembanad. The name itself is a devotion: Kumara, another name for Subramaniam, son of Lord Shiva — god of war, victory, wisdom, and youth — and Kom, simply, home. Literally the abode of the gods. Over eighteen hundred years ago, the Vadakkumkore king received a divine vision here and raised a Subramania temple — a pavilion carved from a single stone. The village inherited the name of the god himself. Destination and deity became one word.",
+  },
+  {
+    numeral: "II",
+    title: "The Colonial Twist",
+    image: "/resort-restaurant-heritage.jpg",
+    imageAlt: "The heritage restaurant — a living relic of the colonial era",
+    body: "In 1847, Alfred George Baker arrived and reclaimed 500 acres of Vembanad Lake, converting it into fertile garden land. In 1881, he constructed the Victorian History House — the Baker family's residence for four generations. The locals called him Kari Saipu: a man who had gone so native he spoke Malayalam and wore the mundu. Sixteen kilometres from Kottayam, cradled by the legendary Vembanad Lake — the largest backwater system in Kerala — Kumarakom became the crown jewel of Kerala's backwater circuit.",
+  },
+  {
+    numeral: "III",
+    title: "Moods & Ayurveda Soul",
+    image: "/resort-ayurveda.jpg",
+    imageAlt: "The on-site Ayurveda centre — a living tradition, not a manufactured amenity",
+    body: "Ayurvedic healing traditions, rooted in over three thousand years of practice, find their most natural expression in Kumarakom — where the warm tropical air, healing waters, and abundance of medicinal herbs create the very conditions that classical Ayurveda prescribes for restoration. Kathakali and Kalaripayattu — one of the world's oldest martial arts — complete an experience unlike any other. Here, Ayurveda is not a wellness amenity. It is a living tradition.",
+  },
+  {
+    numeral: "IV",
+    title: "Nature & The Vembanad",
+    image: "/resort-coracle.jpg",
+    imageAlt: "Coracle on the private canal — the backwater world that surrounds the estate",
+    body: "The Kumarakom Bird Sanctuary — 14 acres on the banks of Vembanad — shelters over 180 species of resident and migratory birds, directly adjacent to the property. Siberian cranes, painted storks, and rare herons arrive each August, transforming the lake into a sanctuary. Pathiramanal Island rises from the water, accessible only by boat. The legendary snake boat races and traditional kettuvallam houseboats animate a backwater world unchanged for centuries.",
+  },
+];
+
 export function Destination() {
   return (
-    <section id="destination" className="tone-silk relative">
-      {/* Cinematic strip — aerial Kerala waterways before the section content */}
+    <section id="destination" className="tone-ink relative">
+      {/* Cinematic strip */}
       <Reveal>
         <figure className="relative w-full aspect-[16/6] lg:aspect-[16/5] overflow-hidden">
           <Image
-            src="/gallery-aerial.jpeg"
-            alt="Aerial view of Kerala backwater network"
+            src="/gallery-canal.jpeg"
+            alt="The resort's private canal at dusk — golden lights reflected in still water"
             fill
             sizes="100vw"
             className="object-cover"
-            style={{ filter: "saturate(0.95)" }}
+            style={{ filter: "saturate(0.9)", objectPosition: "center 60%" }}
           />
           <div
             className="absolute inset-0 pointer-events-none"
             style={{
               background:
-                "linear-gradient(to bottom, transparent 0%, transparent 70%, var(--silk) 100%)",
+                "linear-gradient(to bottom, transparent 0%, transparent 70%, var(--ink) 100%)",
             }}
           />
           <figcaption className="absolute left-8 right-8 bottom-6 lg:left-12 lg:bottom-8 font-display italic text-ivory text-[clamp(0.95rem,1.4vw,1.25rem)]">
-            Kerala, from above — a watercolour seen from a satellite.
+            Where the water holds still long enough to reflect the sky.
           </figcaption>
         </figure>
       </Reveal>
 
       <div className="mx-auto max-w-[1320px] px-6 lg:px-10 py-28 lg:py-40">
-        <div className="grid lg:grid-cols-2 gap-16 lg:gap-20">
-          {/* Left */}
-          <div>
-            <Reveal>
-              <span className="eyebrow">The Place</span>
-            </Reveal>
 
-            <h2 className="h-display text-[clamp(2.2rem,4.5vw,3.6rem)] mt-8">
-              <MaskHeading as="span" className="block">
-                Where the Backwaters
-              </MaskHeading>
-              <MaskHeading as="span" delay={1} className="block">
-                Meet the <em>World</em>
-              </MaskHeading>
-            </h2>
+        {/* Section header */}
+        <div className="mb-20 lg:mb-28">
+          <Reveal>
+            <span className="eyebrow">The Destination</span>
+          </Reveal>
+          <h2 className="h-display text-[clamp(2.2rem,4.5vw,3.6rem)] mt-8">
+            <MaskHeading as="span" className="block">
+              Where Serene Backwaters
+            </MaskHeading>
+            <MaskHeading as="span" delay={1} className="block">
+              Meet <em>Tranquil Luxury</em>
+            </MaskHeading>
+          </h2>
+        </div>
 
-            <Reveal delay={240}>
-              <blockquote className="pull-quote mt-12">
-                &ldquo;If the beauty of Kerala must be captured in a single word, that
-                word is Kumarakom.&rdquo;
-              </blockquote>
-            </Reveal>
-
-            <Reveal delay={320}>
-              <div className="mt-12 space-y-5 body-text">
-                <p>
-                  Sixteen kilometres from Kottayam, cradled by the legendary Vembanad
-                  — the largest backwater system in Kerala and one of the largest in
-                  Asia — Kumarakom is the crown jewel of Kerala&rsquo;s backwater
-                  circuit. The Vembanad reaches its widest point precisely here, where
-                  the far shore disappears into haze by mid-morning.
-                </p>
-                <p>
-                  It is one of those rare places where the world&rsquo;s most
-                  discerning travellers — honeymooners, wellness seekers, birders,
-                  luxury adventurers — all arrive at the same conclusion: there is
-                  nowhere quite like this.
-                </p>
-                <p>
-                  The Kumarakom Bird Sanctuary — 14 acres of lush waterside habitat
-                  for migratory and resident birds — lies directly adjacent to the
-                  property. Pathiramanal Island and the venue of the world-famous
-                  Nehru Trophy Snake Boat Race are moments away by boat. Ayurveda,
-                  houseboat culture, Kathakali, and Kalaripayattu complete a
-                  destination unlike any other on earth.
-                </p>
-              </div>
-            </Reveal>
-
-            <Reveal delay={420}>
-              <div className="mt-10 flex flex-wrap gap-2.5">
-                {PILLS.map((p) => (
-                  <span key={p} className="pill">
-                    {p}
+        {/* 4 Sub-topics */}
+        <div className="space-y-24 lg:space-y-32 mb-24">
+          {SUBTOPICS.map((topic, i) => (
+            <Reveal key={topic.numeral} delay={i * 80}>
+              <div className={`grid lg:grid-cols-2 gap-12 lg:gap-20 items-center ${i % 2 === 1 ? "lg:[direction:rtl]" : ""}`}>
+                {/* Image */}
+                <div className={`relative aspect-[4/3] overflow-hidden ${i % 2 === 1 ? "lg:[direction:ltr]" : ""}`}>
+                  <Image
+                    src={topic.image}
+                    alt={topic.imageAlt}
+                    fill
+                    sizes="(max-width: 1024px) 100vw, 50vw"
+                    className="object-cover"
+                    style={{ filter: "saturate(0.88)" }}
+                  />
+                  <div
+                    className="absolute inset-0 pointer-events-none"
+                    style={{ background: "linear-gradient(135deg, rgba(14,26,20,0.3) 0%, transparent 60%)" }}
+                  />
+                  <span
+                    className="absolute top-5 left-6 font-display italic text-gold/60 text-[2.5rem] leading-none select-none"
+                    aria-hidden
+                  >
+                    {topic.numeral}
                   </span>
-                ))}
+                </div>
+
+                {/* Text */}
+                <div className={i % 2 === 1 ? "lg:[direction:ltr]" : ""}>
+                  <p className="font-sans text-[0.68rem] tracking-[0.24em] uppercase text-brass mb-4">
+                    {topic.numeral} / IV
+                  </p>
+                  <h3 className="h-display-sm text-[clamp(1.5rem,2.5vw,2rem)] mb-6">
+                    {topic.title}
+                  </h3>
+                  <span className="rule-gold mb-6 block" />
+                  <p className="body-text text-[0.95rem] leading-relaxed">
+                    {topic.body}
+                  </p>
+                </div>
               </div>
             </Reveal>
+          ))}
+        </div>
+
+        {/* Pills */}
+        <Reveal>
+          <div className="flex flex-wrap gap-2.5 mb-20">
+            {PILLS.map((p) => (
+              <span key={p} className="pill">
+                {p}
+              </span>
+            ))}
           </div>
+        </Reveal>
 
-          {/* Right — map + stats */}
-          <div className="flex flex-col gap-8">
-            <Reveal delay={120}>
-              <div
-                className="border p-6 lg:p-8"
-                style={{
-                  borderColor: "var(--rule-strong)",
-                  background: "var(--bg-card-deep)",
-                }}
+        {/* Map + stats — mobile only */}
+        <div className="grid lg:grid-cols-2 gap-8 lg:hidden">
+          <Reveal delay={120}>
+            <div
+              className="border p-6 lg:p-8"
+              style={{
+                borderColor: "var(--rule-strong)",
+                background: "var(--bg-card-deep)",
+              }}
+            >
+              <p
+                className="text-[0.7rem] tracking-[0.24em] uppercase text-center mb-4"
+                style={{ color: "var(--on-bg-soft)" }}
               >
-                <p
-                  className="text-[0.7rem] tracking-[0.24em] uppercase text-center mb-4"
-                  style={{ color: "var(--on-bg-soft)" }}
-                >
-                  Kerala
-                </p>
-                <KeralaMap />
-              </div>
-            </Reveal>
+                Kerala
+              </p>
+              <KeralaMap />
+            </div>
+          </Reveal>
 
-            <Reveal delay={240}>
-              <div
-                className="border p-7 lg:p-8"
-                style={{
-                  borderColor: "var(--rule-strong)",
-                  background: "var(--bg-card-deep)",
-                }}
-              >
-                <p className="text-[0.72rem] tracking-[0.22em] uppercase text-brass mb-6">
-                  Tourism at a Glance — Kerala
-                </p>
-                <ul className="divide-y divide-[var(--rule)]">
-                  {STATS.map((s) => (
-                    <li
-                      key={s.label}
-                      className="flex justify-between items-baseline py-3.5"
+          <Reveal delay={240}>
+            <div
+              className="border p-7 lg:p-8"
+              style={{
+                borderColor: "var(--rule-strong)",
+                background: "var(--bg-card-deep)",
+              }}
+            >
+              <p className="text-[0.72rem] tracking-[0.22em] uppercase text-brass mb-6">
+                Tourism at a Glance — Kerala
+              </p>
+              <ul className="divide-y divide-[var(--rule)]">
+                {STATS.map((s) => (
+                  <li
+                    key={s.label}
+                    className="flex justify-between items-baseline py-3.5"
+                  >
+                    <span
+                      className="text-[0.92rem]"
+                      style={{ color: "var(--on-bg)" }}
                     >
-                      <span
-                        className="text-[0.92rem]"
-                        style={{ color: "var(--on-bg)" }}
-                      >
-                        {s.label}
-                      </span>
-                      <span className="font-display text-brass text-[1.15rem]">
-                        {s.value}
-                      </span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </Reveal>
-          </div>
+                      {s.label}
+                    </span>
+                    <span className="font-display text-brass text-[1.15rem]">
+                      {s.value}
+                    </span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </Reveal>
         </div>
       </div>
     </section>

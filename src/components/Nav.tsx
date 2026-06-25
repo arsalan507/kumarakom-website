@@ -6,8 +6,7 @@ const NAV_ITEMS = [
   { href: "#property", label: "Property" },
   { href: "#destination", label: "Destination" },
   { href: "#vision", label: "Vision" },
-  { href: "#investment", label: "Investment" },
-  { href: "#operators", label: "Operators" },
+  { href: "#partner", label: "Partner" },
   { href: "#gallery", label: "Gallery" },
 ];
 
@@ -38,7 +37,7 @@ export function Nav() {
             KUMARAKOM
           </span>
           <span className="text-[0.62rem] tracking-[0.28em] text-sage mt-[2px]">
-            VEMBANAD LAKE, KERALA
+            VEMBANAD BACKWATERS, KERALA
           </span>
         </a>
 
@@ -55,13 +54,10 @@ export function Nav() {
           ))}
         </nav>
 
-        {/* CTAs (desktop) */}
+        {/* CTA (desktop) */}
         <div className="hidden lg:flex items-center gap-3">
-          <a href="#contact" className="cta-outline cta-nav">
-            For Investors
-          </a>
           <a href="#contact" className="cta-fill cta-nav">
-            For Operators
+            Begin Our Partnership
           </a>
         </div>
 
@@ -92,18 +88,11 @@ export function Nav() {
           </nav>
           <div className="flex gap-3 mt-6">
             <a
-              href="#contact?role=investor"
-              onClick={() => setOpen(false)}
-              className="cta-outline flex-1"
-            >
-              For Investors
-            </a>
-            <a
-              href="#contact?role=operator"
+              href="#contact"
               onClick={() => setOpen(false)}
               className="cta-fill flex-1"
             >
-              For Operators
+              Partner With Us
             </a>
           </div>
         </div>

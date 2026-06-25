@@ -3,11 +3,12 @@ import { Hero } from "@/components/Hero";
 import { Property } from "@/components/Property";
 import { Destination } from "@/components/Destination";
 import { Vision } from "@/components/Vision";
-import { Investment } from "@/components/Investment";
-import { Operators } from "@/components/Operators";
+import { PartnerSection } from "@/components/PartnerSection";
 import { Gallery } from "@/components/Gallery";
 import { Contact } from "@/components/Contact";
 import { Footer } from "@/components/Footer";
+import { WhatsAppFloat } from "@/components/WhatsAppFloat";
+import { AmbientAudio } from "@/components/AmbientAudio";
 
 export default function Home() {
   return (
@@ -16,14 +17,15 @@ export default function Home() {
       <main>
         <Hero />
         <Property />
-        <Destination />
         <Vision />
-        <Investment />
-        <Operators />
         <Gallery />
+        <Destination />
+        <PartnerSection />
         <Contact />
       </main>
       <Footer />
+      <WhatsAppFloat />
+      <AmbientAudio />
     </>
   );
 }
