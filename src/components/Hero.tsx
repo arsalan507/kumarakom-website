@@ -88,7 +88,10 @@ export function Hero() {
         }}
       />
 
-      <div className="relative z-10 mx-auto max-w-[920px] px-6 text-center py-32">
+      <div
+        className="relative z-10 mx-auto max-w-[920px] px-6 text-center py-32"
+        style={{ animation: "heroTextIn 0.01s 10s forwards", opacity: 0 }}
+      >
 
         <h1 className="h-display text-[clamp(2.2rem,6vw,4.6rem)]">
           <MaskHeading as="span" className="block">

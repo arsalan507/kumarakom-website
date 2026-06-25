@@ -18,10 +18,10 @@ export function Footer() {
           {/* Wordmark + tagline */}
           <div>
             <p className="font-display text-cream tracking-[0.32em] text-[1rem]">
-              KUMARAKOM ESTATES
+              THE BACKWATER ESTATE
             </p>
             <p className="text-sage text-[0.62rem] tracking-[0.28em] mt-1">
-              VEMBANAD BACKWATERS, KERALA
+              KUMARAKOM, KERALA
             </p>
             <p className="font-display italic text-sage/80 mt-5 text-[0.9rem] leading-relaxed max-w-[260px]">
               2,000 years of sacred history.
@@ -75,6 +75,17 @@ export function Footer() {
               </svg>
               View on Google Maps
             </a>
+          </div>
+
+          <div>
+            <p className="text-[0.66rem] tracking-[0.22em] uppercase text-brass mb-2">
+              Registered Office
+            </p>
+            <p className="font-display italic text-ivory/70 text-[0.88rem] leading-relaxed">
+              Alex Resorts and Hotels Pvt Ltd<br />
+              B-1254, 14th Floor, Mittal Towers,<br />
+              M.G. Road, Bangalore — 560 001
+            </p>
           </div>
 
           <div>

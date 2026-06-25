@@ -3,11 +3,13 @@
 import { useEffect, useState } from "react";
 
 const NAV_ITEMS = [
-  { href: "#property", label: "Property" },
-  { href: "#destination", label: "Destination" },
-  { href: "#vision", label: "Vision" },
-  { href: "#partner", label: "Partner" },
-  { href: "#gallery", label: "Gallery" },
+  { href: "#property",    label: "The Estate" },
+  { href: "#vision",      label: "The Opportunity" },
+  { href: "#gallery",     label: "The Canvas" },
+  { href: "#destination", label: "The Destination" },
+  { href: "#owners",      label: "The Visionaries" },
+  { href: "#partner",     label: "The Partners" },
+  { href: "#contact",     label: "About Us" },
 ];
 
 export function Nav() {
@@ -34,10 +36,10 @@ export function Nav() {
         {/* Wordmark */}
         <a href="#hero" className="flex flex-col leading-tight shrink-0">
           <span className="font-display text-[1.05rem] tracking-[0.32em] text-cream">
-            KUMARAKOM ESTATES
+            THE BACKWATER ESTATE
           </span>
           <span className="text-[0.62rem] tracking-[0.28em] text-sage mt-[2px]">
-            VEMBANAD BACKWATERS, KERALA
+            KUMARAKOM, KERALA
           </span>
         </a>
 
@@ -57,7 +59,7 @@ export function Nav() {
         {/* CTA (desktop) */}
         <div className="hidden lg:flex items-center gap-3">
           <a href="#contact" className="cta-fill cta-nav">
-            Begin Our Partnership
+            Partner With Us
           </a>
         </div>
 

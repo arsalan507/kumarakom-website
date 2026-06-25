@@ -142,6 +142,123 @@ export function Destination() {
           ))}
         </div>
 
+        {/* ── Kerala Houseboats ── */}
+        <Reveal>
+          <div className="border-t border-[var(--rule)] pt-20 lg:pt-28 mb-20 lg:mb-28">
+            <span className="eyebrow mb-6 block">Kerala Houseboats</span>
+            <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+              <div className="relative aspect-[4/3] overflow-hidden">
+                <Image
+                  src="/gallery-kettuvallam.jpeg"
+                  alt="A traditional Kerala kettuvallam houseboat on Vembanad Lake"
+                  fill
+                  sizes="(max-width: 1024px) 100vw, 50vw"
+                  className="object-cover"
+                  style={{ filter: "saturate(0.88)" }}
+                />
+              </div>
+              <div>
+                <h3 className="h-display-sm text-[clamp(1.5rem,2.5vw,2rem)] mb-6">
+                  Kettuvallam — <em>Floating Heritage</em>
+                </h3>
+                <span className="rule-gold mb-6 block" />
+                <p className="body-text text-[0.95rem] leading-relaxed">
+                  Kerala&rsquo;s iconic houseboats, or Kettuvallams, are among the state&rsquo;s most distinctive tourism
+                  experiences. Originally used to transport rice and spices through the backwaters, these traditional
+                  vessels have been transformed into luxurious floating retreats that offer an intimate way to experience
+                  Kerala&rsquo;s serene waterways. Kumarakom is one of the premier destinations for houseboat tourism,
+                  offering visitors breathtaking views of Vembanad Lake, lush landscapes, vibrant birdlife, and authentic
+                  village life along the backwaters.
+                </p>
+              </div>
+            </div>
+          </div>
+        </Reveal>
+
+        {/* ── Immersive Culture ── */}
+        <Reveal>
+          <div className="border-t border-[var(--rule)] pt-20 lg:pt-28 mb-20 lg:mb-28">
+            <span className="eyebrow mb-6 block">Immersive Culture</span>
+            <h3 className="h-display-sm text-[clamp(1.8rem,3vw,2.6rem)] mb-6 max-w-2xl">
+              The <em>Living Arts</em> of Kerala
+            </h3>
+            <span className="rule-gold mb-8 block" />
+            <p className="body-text text-[0.95rem] leading-relaxed max-w-3xl mb-14">
+              Experience the soul of Kerala through captivating live cultural performances during your stay at
+              The Backwater Estate. From graceful classical dance forms and vibrant folk traditions to ancient martial
+              arts, every performance offers an authentic glimpse into the state&rsquo;s rich artistic heritage.
+              Carefully curated to immerse guests in the spirit of Kerala, these cultural experiences transform every
+              evening into a memorable celebration of tradition, storytelling, and local craftsmanship.
+            </p>
+            <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+              {[
+                {
+                  name: "Kalaripayattu",
+                  desc: "One of the world’s oldest martial arts, believed to have originated in Kerala — a discipline of body, breath, and spirit.",
+                },
+                {
+                  name: "Kathakali",
+                  desc: "Kerala’s internationally acclaimed classical dance-drama — gods and demons rendered in lamplight, costume, and gesture.",
+                },
+                {
+                  name: "Mohiniyattam",
+                  desc: "Kerala’s graceful classical dance form, known for its elegance, flowing movement, and expressive storytelling.",
+                },
+                {
+                  name: "Pulikali",
+                  desc: 'The famous “Tiger Dance” performed during Onam — a vibrant celebration of Kerala’s festive spirit and folk tradition.',
+                },
+              ].map((art) => (
+                <div
+                  key={art.name}
+                  className="border p-6"
+                  style={{ borderColor: "var(--rule-strong)", background: "var(--bg-card-deep)" }}
+                >
+                  <h4 className="font-display text-gold text-[1.1rem] mb-3">{art.name}</h4>
+                  <p className="body-text text-[0.88rem] leading-relaxed">{art.desc}</p>
+                </div>
+              ))}
+            </div>
+            <p className="body-text text-[0.88rem] mt-8 text-cream/60 max-w-2xl">
+              Beyond these performances, guests discover Kerala&rsquo;s festivals, temple arts, classical music,
+              traditional cuisine, and local craftsmanship — a cultural landscape as layered as the backwaters themselves.
+            </p>
+          </div>
+        </Reveal>
+
+        {/* ── Nehru Trophy Boat Race ── */}
+        <Reveal>
+          <div className="border-t border-[var(--rule)] pt-20 lg:pt-28 mb-20 lg:mb-28">
+            <span className="eyebrow mb-6 block">Nehru Trophy Boat Race</span>
+            <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+              <div>
+                <h3 className="h-display-sm text-[clamp(1.5rem,2.5vw,2rem)] mb-6">
+                  Chundan Vallams — <em>A Spectacle of Tradition</em>
+                </h3>
+                <span className="rule-gold mb-6 block" />
+                <p className="body-text text-[0.95rem] leading-relaxed">
+                  The Nehru Trophy Boat Race is one of Kerala&rsquo;s most iconic cultural and sporting events, held
+                  annually on the picturesque Punnamada Lake near Kumarakom and Alappuzha. Featuring magnificent
+                  Chundan Vallams (snake boats) powered by synchronised teams of over 100 rowers, the event attracts
+                  thousands of spectators and visitors from around the world. Its close proximity to Kumarakom makes
+                  it one of the region&rsquo;s biggest tourism attractions, offering guests an opportunity to witness
+                  Kerala&rsquo;s vibrant traditions, community spirit, and world-famous backwater culture.
+                </p>
+              </div>
+              <div className="relative aspect-[4/3] overflow-hidden">
+                <Image
+                  src="/gallery-canal-2.jpeg"
+                  alt="The Vembanad backwaters — setting for the Nehru Trophy Boat Race"
+                  fill
+                  sizes="(max-width: 1024px) 100vw, 50vw"
+                  className="object-cover"
+                  style={{ filter: "saturate(0.88)" }}
+                />
+              </div>
+            </div>
+          </div>
+        </Reveal>
+
         {/* Pills */}
         <Reveal>
           <div className="flex flex-wrap gap-2.5 mb-20">

@@ -35,7 +35,7 @@ export function Owners() {
             The <em>People</em> Behind
           </MaskHeading>
           <MaskHeading as="span" delay={1} className="block">
-            Kumarakom Estates
+            The Backwater Estate
           </MaskHeading>
         </h2>
 

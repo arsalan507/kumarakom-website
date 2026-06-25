@@ -19,6 +19,14 @@ const CARDS = [
     title: "Architects & Interior Designers",
     body: "Those who design with the land rather than upon it — who understand that in Kumarakom, restraint is the highest form of luxury.",
   },
+  {
+    title: "Hospitality Consultants",
+    body: "Specialists who have shaped destination resorts across India and the world — and who bring the operational precision this property's rare positioning demands.",
+  },
+  {
+    title: "Strategic Development Partners",
+    body: "Those who think in decades, not quarters — builders with the vision, network, and patience to co-create a landmark that outlasts the moment.",
+  },
 ];
 
 export function PartnerSection() {

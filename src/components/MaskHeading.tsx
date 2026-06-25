@@ -16,12 +16,14 @@ export function MaskHeading({
   as: Tag = "span",
   children,
   delay = 0,
+  delayMs,
   className = "",
   spanClassName = "",
 }: {
   as?: HtmlTag;
   children: ReactNode;
   delay?: 0 | 1 | 2 | 3;
+  delayMs?: number;
   className?: string;
   spanClassName?: string;
 }) {
