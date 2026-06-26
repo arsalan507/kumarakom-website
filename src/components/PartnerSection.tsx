@@ -19,14 +19,6 @@ const CARDS = [
     title: "Architects & Interior Designers",
     body: "Those who design with the land rather than upon it — who understand that in Kumarakom, restraint is the highest form of luxury.",
   },
-  {
-    title: "Hospitality Consultants",
-    body: "Specialists who have shaped destination resorts across India and the world — and who bring the operational precision this property's rare positioning demands.",
-  },
-  {
-    title: "Strategic Development Partners",
-    body: "Those who think in decades, not quarters — builders with the vision, network, and patience to co-create a landmark that outlasts the moment.",
-  },
 ];
 
 export function PartnerSection() {
@@ -96,7 +88,7 @@ export function PartnerSection() {
             </Reveal>
           </div>
 
-          {/* Right — 6 value cards */}
+          {/* Right — 4 value cards */}
           <div className="flex flex-col gap-4">
             {CARDS.map((c, i) => (
               <Reveal key={c.title} delay={i * 90}>
@@ -112,7 +104,7 @@ export function PartnerSection() {
                   <div>
                     <h3
                       className="text-[0.78rem] tracking-[0.18em] uppercase font-semibold mb-2"
-                      style={{ color: "var(--on-bg)" }}
+                      style={{ color: "var(--brass-light)" }}
                     >
                       {c.title}
                     </h3>

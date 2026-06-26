@@ -71,6 +71,23 @@ const PILLARS = [
     ],
     source: "Source: UNWTO Ecotourism Report 2024; Kerala Tourism Department",
   },
+  {
+    numeral: "V",
+    label: "Pillar Five",
+    title: "MICE & Incentive Tourism",
+    image: "/mice-backwater.jpeg",
+    hook: "Kochi is already a boardroom. Kumarakom is where the boardroom exhales. Ninety minutes separates India's fastest-growing MICE hub from a waterfront sanctuary no metro hotel can replicate.",
+    body: "Delegates who convene in Kochi retreat to Kumarakom. Incentive groups bypass the city entirely and arrive directly at Vembanad. The estate's combination of private waterfront, heritage dining, Ayurveda, and absolute seclusion places it squarely in the highest-yield segment of the hospitality market — experiential MICE — where spend-per-delegate runs 2–3× the leisure average.",
+    facts: [
+      "India MICE market: USD 37.75B (2025) → USD 74.12B by 2031 at 11.92% CAGR",
+      "Tier-II cities drive 35–40% of domestic MICE; Kochi & Kumarakom explicitly named as key hubs",
+      "Kerala: India's #1 state — 94 five-star, 420 four-star, 607 three-star hotels",
+      "MICE delegates spend 2–3× more than leisure tourists; incentive tourism growing 12–15% p.a.",
+      "68% of Fortune 500 companies maintain dedicated MICE budgets; 310M professionals attend structured events annually",
+      "Incentive sub-segment CAGR: 10.2% through 2033 — led by demand for experiential retreats",
+    ],
+    source: "Source: Mordor Intelligence; Grand View Research; Travel Trade Journal; Tornos News",
+  },
 ];
 
 export function Vision() {
@@ -88,11 +105,11 @@ export function Vision() {
         {/* ── Mobile header (single line, above snap cards) ── */}
         <div className="lg:hidden mb-6">
           <Reveal>
-            <span className="eyebrow">The Vision</span>
+            <span className="eyebrow">The Opportunity</span>
           </Reveal>
           <h2 className="h-display text-[clamp(2rem,7vw,3rem)] mt-5">
-            <MaskHeading as="span" className="block">Four Pillars of</MaskHeading>
-            <MaskHeading as="span" delay={1} className="block"><em>Enduring Value</em></MaskHeading>
+            <MaskHeading as="span" className="block">Opportunity</MaskHeading>
+            <MaskHeading as="span" delay={1} className="block"><em>Meets Destination</em></MaskHeading>
           </h2>
           <Reveal delay={200}>
             <p className="text-sage/60 text-[0.65rem] tracking-[0.22em] uppercase mt-4 flex items-center gap-3">
@@ -109,11 +126,11 @@ export function Vision() {
           {/* Left — sticky intro (desktop only) */}
           <div className="pillar-sticky hidden lg:block">
             <Reveal>
-              <span className="eyebrow">The Vision</span>
+              <span className="eyebrow">The Opportunity</span>
             </Reveal>
             <h2 className="h-display text-[clamp(2.2rem,4.5vw,3.6rem)] mt-8">
-              <MaskHeading as="span" className="block">Four Pillars of</MaskHeading>
-              <MaskHeading as="span" delay={1} className="block"><em>Enduring Value</em></MaskHeading>
+              <MaskHeading as="span" className="block">Opportunity</MaskHeading>
+              <MaskHeading as="span" delay={1} className="block"><em>Meets Destination</em></MaskHeading>
             </h2>
             <Reveal delay={300}>
               <p className="body-text mt-8 text-[1.05rem]">
@@ -126,7 +143,7 @@ export function Vision() {
             <Reveal delay={420}>
               <div className="mt-10 flex items-center gap-3 text-sage/70 text-[0.7rem] tracking-[0.28em] uppercase">
                 <span className="rule-gold" />
-                <span>I &nbsp;·&nbsp; II &nbsp;·&nbsp; III &nbsp;·&nbsp; IV</span>
+                <span>I &nbsp;·&nbsp; II &nbsp;·&nbsp; III &nbsp;·&nbsp; IV &nbsp;·&nbsp; V</span>
               </div>
             </Reveal>
           </div>

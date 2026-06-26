@@ -32,8 +32,8 @@ export function Nav() {
           : "bg-transparent",
       ].join(" ")}
     >
-      <div className="mx-auto max-w-[1320px] px-6 lg:px-10 h-20 flex items-center justify-between gap-6">
-        {/* Wordmark */}
+      <div className="w-full px-6 lg:px-10 h-20 flex items-center gap-6">
+        {/* Wordmark — flush left */}
         <a href="#hero" className="flex flex-col leading-tight shrink-0">
           <span className="font-display text-[1.05rem] tracking-[0.32em] text-cream">
             THE BACKWATER ESTATE
@@ -43,22 +43,20 @@ export function Nav() {
           </span>
         </a>
 
-        {/* Desktop nav */}
-        <nav className="hidden lg:flex items-center gap-7">
-          {NAV_ITEMS.map((item) => (
-            <a
-              key={item.href}
-              href={item.href}
-              className="text-[0.74rem] uppercase tracking-[0.18em] text-cream/85 hover:text-gold transition-colors"
-            >
-              {item.label}
-            </a>
-          ))}
-        </nav>
-
-        {/* CTA (desktop) */}
-        <div className="hidden lg:flex items-center gap-3">
-          <a href="#contact" className="cta-fill cta-nav">
+        {/* Nav + CTA — pushed to right extreme */}
+        <div className="ml-auto hidden lg:flex items-center gap-7">
+          <nav className="flex items-center gap-7">
+            {NAV_ITEMS.map((item) => (
+              <a
+                key={item.href}
+                href={item.href}
+                className="text-[0.72rem] uppercase tracking-[0.15em] text-cream/85 hover:text-gold transition-colors whitespace-nowrap"
+              >
+                {item.label}
+              </a>
+            ))}
+          </nav>
+          <a href="#contact" className="cta-fill cta-nav shrink-0">
             Partner With Us
           </a>
         </div>

@@ -65,7 +65,7 @@ export function Gallery() {
       <div className="mx-auto max-w-[1320px] px-6 lg:px-10 pt-14 lg:pt-20 pb-16">
         <div className="max-w-2xl">
           <Reveal>
-            <span className="eyebrow">The Atmosphere</span>
+            <span className="eyebrow">The Canvas</span>
           </Reveal>
           <h2 className="h-display text-[clamp(2.2rem,4.5vw,3.6rem)] mt-8">
             <MaskHeading as="span" className="block">
@@ -81,22 +81,6 @@ export function Gallery() {
           </Reveal>
         </div>
       </div>
-
-      {/* Disclaimer banner */}
-      <Reveal>
-        <div
-          className="mx-6 lg:mx-10 mb-10 px-6 py-4 border flex items-start gap-4"
-          style={{ borderColor: "var(--rule-strong)", background: "var(--bg-card-deep)" }}
-        >
-          <svg viewBox="0 0 20 20" fill="currentColor" className="w-4 h-4 shrink-0 mt-0.5" style={{ color: "var(--brass)" }} aria-hidden>
-            <path fillRule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a.75.75 0 000 1.5h.253a.25.25 0 01.244.304l-.459 2.066A1.75 1.75 0 0010.747 15H11a.75.75 0 000-1.5h-.253a.25.25 0 01-.244-.304l.459-2.066A1.75 1.75 0 009.253 9H9z" clipRule="evenodd" />
-          </svg>
-          <p className="text-[0.8rem] leading-relaxed" style={{ color: "var(--on-bg-soft)" }}>
-            <span className="font-semibold" style={{ color: "var(--on-bg)" }}>Archival images.</span>
-            {" "}These photographs document the estate in its current pre-renovation state. The property will undergo comprehensive redevelopment prior to operation. AI-rendered visuals of the proposed renovation are available on request.
-          </p>
-        </div>
-      </Reveal>
 
       {/* Editorial 4-column grid — all square/fixed aspect tiles to avoid blank spaces */}
       <div
@@ -132,6 +116,22 @@ export function Gallery() {
           );
         })}
       </div>
+
+      {/* Disclaimer — below images */}
+      <Reveal>
+        <div
+          className="mx-6 lg:mx-10 mt-8 mb-12 lg:mb-16 px-6 py-5 border flex items-start gap-4"
+          style={{ borderColor: "var(--rule-strong)", background: "var(--bg-card-deep)" }}
+        >
+          <svg viewBox="0 0 20 20" fill="currentColor" className="w-4 h-4 shrink-0 mt-0.5" style={{ color: "var(--brass)" }} aria-hidden>
+            <path fillRule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a.75.75 0 000 1.5h.253a.25.25 0 01.244.304l-.459 2.066A1.75 1.75 0 0010.747 15H11a.75.75 0 000-1.5h-.253a.25.25 0 01-.244-.304l.459-2.066A1.75 1.75 0 009.253 9H9z" clipRule="evenodd" />
+          </svg>
+          <p className="text-[0.88rem] leading-relaxed" style={{ color: "var(--on-bg)" }}>
+            <span className="font-semibold" style={{ color: "var(--ivory)" }}>Archival images.</span>
+            {" "}The photographs showcased on this website represent the property during its operational period and are intended for reference purposes only.
+          </p>
+        </div>
+      </Reveal>
     </section>
   );
 }

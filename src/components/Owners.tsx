@@ -27,17 +27,10 @@ export function Owners() {
     <section id="owners" className="tone-moss">
       <div className="mx-auto max-w-[1320px] px-6 lg:px-10 py-28 lg:py-40">
         <Reveal>
-          <span className="eyebrow">About the Owners</span>
+          <span className="eyebrow">The Visionaries</span>
         </Reveal>
 
-        <h2 className="h-display text-[clamp(2rem,4vw,3.2rem)] mt-8 mb-16 lg:mb-20">
-          <MaskHeading as="span" className="block">
-            The <em>People</em> Behind
-          </MaskHeading>
-          <MaskHeading as="span" delay={1} className="block">
-            The Backwater Estate
-          </MaskHeading>
-        </h2>
+        <div className="mb-16 lg:mb-20" />
 
         <div className="grid lg:grid-cols-2 gap-10 lg:gap-16">
           {OWNERS.map((owner, i) => (

@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { Reveal } from "./Reveal";
 import { MaskHeading } from "./MaskHeading";
 import { CountUp } from "./CountUp";
@@ -147,28 +148,54 @@ export function Property() {
           </div>
         </div>
 
-        {/* Licence marquee */}
+      </div>
+
+      {/* Aerial boundary image — full width, exact 1586×992 ratio */}
+      <Reveal>
+        <figure
+          className="relative w-full overflow-hidden"
+          style={{ aspectRatio: "1586 / 992" }}
+        >
+          <div className="absolute inset-0 img-drift">
+            <Image
+              src="/aerial-property-boundary.png"
+              alt="Aerial view of the 14.41-acre Kumarakom estate with property boundary marked"
+              fill
+              sizes="100vw"
+              className="object-cover"
+              priority
+            />
+          </div>
+          <div
+            className="absolute inset-0 pointer-events-none"
+            style={{
+              background:
+                "linear-gradient(to bottom, transparent 65%, rgba(14,26,20,0.55) 100%)",
+            }}
+          />
+        </figure>
+      </Reveal>
+
+      {/* Licence label */}
+      <div className="mx-auto max-w-[1320px] px-6 lg:px-10">
         <Reveal delay={200}>
-          <div className="mt-20 pt-10 border-t border-[var(--rule)]">
+          <div className="mt-10 pt-10 border-t border-[var(--rule)]">
             <p className="font-sans text-[0.72rem] tracking-[0.22em] uppercase text-brass mb-8 flex items-center gap-4">
               <span className="rule-gold" />
-              12+ Licences — Waiting to be Renewed
+              12+ Licences
             </p>
           </div>
         </Reveal>
+      </div>
 
-        {/* Full-bleed ticker */}
-        <div className="marquee-wrap" aria-label="Licences in place">
-          <div className="marquee-track">
-            {[...LICENCES, ...LICENCES].map((l, i) => (
-              <span
-                key={i}
-                className="pill shrink-0 whitespace-nowrap mx-3"
-              >
-                {l}
-              </span>
-            ))}
-          </div>
+      {/* Full-bleed ticker */}
+      <div className="marquee-wrap" aria-label="Licences in place">
+        <div className="marquee-track">
+          {[...LICENCES, ...LICENCES].map((l, i) => (
+            <span key={i} className="pill shrink-0 whitespace-nowrap mx-3">
+              {l}
+            </span>
+          ))}
         </div>
       </div>
     </section>

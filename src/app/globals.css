@@ -265,9 +265,10 @@ body {
   box-shadow: 0 6px 22px -6px rgba(138, 106, 59, 0.35);
 }
 .cta-nav {
-  padding: 0.82rem 1.35rem;
-  font-size: 0.66rem;
-  letter-spacing: 0.22em;
+  padding: 0.85rem 1.6rem;
+  font-size: 0.68rem;
+  letter-spacing: 0.18em;
+  white-space: nowrap;
 }
 
 /* ───────── Cards ───────── */
@@ -368,18 +369,43 @@ body {
 
 /* ───────── Ken Burns — slow cinematic zoom for hero ───────── */
 @keyframes heroTextIn {
-  to { opacity: 1; }
+  from {
+    opacity: 0;
+    transform: translateY(44px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 @keyframes ken-burns {
-  0%   { transform: scale(1.04) translate3d(0, 0, 0); }
-  50%  { transform: scale(1.10) translate3d(-1.5%, -1.2%, 0); }
-  100% { transform: scale(1.04) translate3d(0, 0, 0); }
+  0%   { transform: scale(1.00) translate3d(0, 0, 0); }
+  50%  { transform: scale(1.04) translate3d(-1%, -0.8%, 0); }
+  100% { transform: scale(1.00) translate3d(0, 0, 0); }
 }
 .ken-burns {
   animation: ken-burns 28s ease-in-out infinite;
   will-change: transform;
 }
+
+/* ───────── Section image motion — pan / drift variants ───────── */
+@keyframes img-pan-right {
+  0%   { transform: scale(1.06) translate3d(-2.5%, 0, 0); }
+  100% { transform: scale(1.06) translate3d(2.5%, 0, 0); }
+}
+@keyframes img-pan-left {
+  0%   { transform: scale(1.06) translate3d(2.5%, 0, 0); }
+  100% { transform: scale(1.06) translate3d(-2.5%, 0, 0); }
+}
+@keyframes img-drift {
+  0%   { transform: scale(1.00) translate3d(0, 0, 0); }
+  50%  { transform: scale(1.05) translate3d(-1.2%, -0.6%, 0); }
+  100% { transform: scale(1.00) translate3d(0, 0, 0); }
+}
+.img-pan-right { animation: img-pan-right 22s ease-in-out infinite alternate; will-change: transform; }
+.img-pan-left  { animation: img-pan-left  22s ease-in-out infinite alternate; will-change: transform; }
+.img-drift     { animation: img-drift     28s ease-in-out infinite;           will-change: transform; }
 
 /* ───────── Sticky-pinned pillar focus (desktop only — avoid overlap on mobile) ───────── */
 .pillar-sticky {

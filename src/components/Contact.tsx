@@ -32,7 +32,7 @@ export function Contact() {
           {/* Left */}
           <div>
             <Reveal>
-              <span className="eyebrow">Begin Our Partnership</span>
+              <span className="eyebrow">About Us</span>
             </Reveal>
             <h2 className="h-display text-[clamp(2.2rem,4.5vw,3.6rem)] mt-8">
               <MaskHeading as="span" className="block">

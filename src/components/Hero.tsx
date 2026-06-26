@@ -90,15 +90,15 @@ export function Hero() {
 
       <div
         className="relative z-10 mx-auto max-w-[920px] px-6 text-center py-32"
-        style={{ animation: "heroTextIn 0.01s 10s forwards", opacity: 0 }}
+        style={{ animation: "heroTextIn 1.2s 3s ease-out forwards", opacity: 0 }}
       >
 
         <h1 className="h-display text-[clamp(2.2rem,6vw,4.6rem)]">
           <MaskHeading as="span" className="block">
-            A Rare Invitation —
+            The Backwater Legacy —
           </MaskHeading>
           <MaskHeading as="span" delay={1} className="block">
-            <em>Kumarakom, Kerala.</em>
+            <em>Healing Waters. Mystical Traditions.</em>
           </MaskHeading>
         </h1>
 
@@ -115,13 +115,6 @@ export function Hero() {
         </Reveal>
 
         <Reveal delay={960}>
-          <div className="mt-20 flex justify-center gap-4">
-            <a href="#contact?role=investor" className="cta-outline">For Investors</a>
-            <a href="#contact?role=operator" className="cta-fill">For Operators</a>
-          </div>
-        </Reveal>
-
-        <Reveal delay={1100}>
           <div className="mt-14 flex justify-center">
             <span className="scroll-cue">Scroll</span>
           </div>
